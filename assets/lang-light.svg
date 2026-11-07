@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-label="Language share: JavaScript 59%, Rust 28%, Java 13%">
-<style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
-<rect width="1200" height="140" rx="28" fill="#EEF1E8" stroke="#E0E6D3" stroke-width="2"/>
-<clipPath id="c"><rect x="32" y="34" width="1136" height="30" rx="15"/></clipPath>
-<g clip-path="url(#c)"><rect x="32" y="34" width="666" height="30" fill="#C6F432" rx="15"/><rect x="702" y="34" width="315" height="30" fill="#0F2A20"/><rect x="1021" y="34" width="153" height="30" fill="#4C6256"/></g>
-<circle cx="40" cy="100" r="8" fill="#C6F432" stroke="#4C6256" stroke-width="1"/><text x="58" y="106" font-size="19" font-weight="700" fill="#0F2A20">JavaScript <tspan font-weight="400" fill="#4C6256">59%</tspan></text><circle cx="320" cy="100" r="8" fill="#0F2A20" stroke="#4C6256" stroke-width="1"/><text x="338" y="106" font-size="19" font-weight="700" fill="#0F2A20">Rust <tspan font-weight="400" fill="#4C6256">28%</tspan></text><circle cx="600" cy="100" r="8" fill="#4C6256" stroke="#4C6256" stroke-width="1"/><text x="618" y="106" font-size="19" font-weight="700" fill="#0F2A20">Java <tspan font-weight="400" fill="#4C6256">13%</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-label="Language distribution">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif} .mono{font-family:'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace}</style>
+<rect width="1200" height="120" rx="8" fill="#FFFFFF" stroke="#E1E4E8" stroke-width="1"/>
+<text class="mono" x="48" y="32" font-size="12" font-weight="700" letter-spacing="1.5" fill="#6B7280">TELEMETRY // LANGUAGE DISTRIBUTION</text>
+<text class="mono" x="1152" y="32" text-anchor="end" font-size="12" fill="#9CA3AF">BY SOURCE BYTES</text>
+<g transform="translate(48 46)"><rect x="0" y="0" width="647" height="14" rx="2" fill="#111827"/><rect x="650" y="0" width="306" height="14" rx="2" fill="#E65100"/><rect x="959" y="0" width="148" height="14" rx="2" fill="#6B7280"/></g>
+<g transform="translate(48 94)"><rect x="0" y="-8" width="10" height="10" rx="2" fill="#111827"/>
+<text class="mono" x="18" y="0" font-size="13" font-weight="600" fill="#111827">JavaScript <tspan fill="#6B7280">59%</tspan></text><rect x="220" y="-8" width="10" height="10" rx="2" fill="#E65100"/>
+<text class="mono" x="238" y="0" font-size="13" font-weight="600" fill="#111827">Rust <tspan fill="#6B7280">28%</tspan></text><rect x="440" y="-8" width="10" height="10" rx="2" fill="#6B7280"/>
+<text class="mono" x="458" y="0" font-size="13" font-weight="600" fill="#111827">Java <tspan fill="#6B7280">13%</tspan></text></g>
 </svg>

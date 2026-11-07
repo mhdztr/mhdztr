@@ -5,9 +5,9 @@
 
 </div>
 
-I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
+I build software in Rust, Java, and JavaScript: command-line utilities, desktop audio engines, and operational web systems.
 
-**[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
+**[GitHub](https://github.com/mhdztr)** &nbsp;·&nbsp; **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)**
 
 <div align="center">
 
@@ -15,11 +15,11 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 </div>
 
-## Recently shipped
+### Repositories
 
 {{TILES}}
 
-## How I spend my time
+### Telemetry
 
 <div align="center">
 
@@ -29,4 +29,4 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 </div>
 
-<sub>Active on {{DAYS}} of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
+<sub>Automated telemetry: rebuilds from GitHub API every 12 hours via GitHub Actions.</sub>

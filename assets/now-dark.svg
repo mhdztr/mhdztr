@@ -1,41 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="In the workshop: smelt — Convert any document to any other.">
-<style>
-text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}
-.s1{animation:fl 7s ease-in-out infinite}.s2{animation:fl 8s ease-in-out -3s infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
-</style>
-<rect width="1200" height="180" rx="28" fill="#16241C"/>
-<clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
-<g clip-path="url(#nc)">
-  <defs>
-<pattern id="b7p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
-<g fill="none" stroke="#E8EFDC" stroke-width="1.6" stroke-linecap="round">
-<ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
-<ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
-<circle cx="32" cy="32" r="3.4"/>
-</g>
-<g fill="#E8EFDC"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
-<circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Current Focus: smelt">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif} .mono{font-family:'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace}</style>
+<rect width="1200" height="150" rx="10" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<defs>
+<pattern id="bc_3_p" width="80" height="80" patternUnits="userSpaceOnUse">
+  <circle cx="40" cy="40" r="28" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.07"/>
+  <circle cx="0" cy="0" r="28" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.07"/>
+  <circle cx="80" cy="0" r="28" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.07"/>
+  <circle cx="0" cy="80" r="28" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.07"/>
+  <circle cx="80" cy="80" r="28" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.07"/>
+  <circle cx="40" cy="40" r="3" fill="none" stroke="#F0F6FC" stroke-width="0.8" opacity="0.10500000000000001"/>
+  <line x1="36" y1="40" x2="44" y2="40" stroke="#F0F6FC" stroke-width="0.7" opacity="0.10500000000000001"/>
+  <line x1="40" y1="36" x2="40" y2="44" stroke="#F0F6FC" stroke-width="0.7" opacity="0.10500000000000001"/>
 </pattern>
-<linearGradient id="b7g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.72" stop-color="#000"/></linearGradient>
-<mask id="b7m"><rect width="1200" height="180" fill="url(#b7g)"/></mask>
+<linearGradient id="bc_3_m" x1="1" y1="0" x2="0" y2="0">
+  <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+  <stop offset="0.65" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<mask id="bc_3_mask"><rect width="1200" height="150" fill="url(#bc_3_m)"/></mask>
 </defs>
-<rect width="1200" height="180" fill="url(#b7p)" opacity="0.13" mask="url(#b7m)"/>
-  <!-- Geometric accents echoing hero -->
-  <g transform="translate(860 0)">
-    <g class="s1"><circle cx="120" cy="80" r="68" fill="#C6F432" opacity="0.85"/></g>
-    <g class="s2"><rect x="20" y="52" width="76" height="76" rx="24" fill="#E8EFDC"/><circle cx="58" cy="90" r="16" fill="#C6F432"/></g>
-  </g>
+<rect width="1200" height="150" fill="url(#bc_3_p)" mask="url(#bc_3_mask)"/>
+
+<!-- Left Accent border -->
+<rect x="0" y="0" width="4" height="150" rx="2" fill="#F59E0B"/>
+
+<g transform="translate(48 0)">
+  <!-- Header row -->
+  <text class="mono" x="0" y="38" font-size="12" font-weight="700" letter-spacing="1.5" fill="#F59E0B">CURRENT FOCUS // REPOSITORY</text>
+  <text class="mono" x="1104" y="38" text-anchor="end" font-size="13" fill="#8B949E">PUSHED TODAY · RUST</text>
+  
+  <!-- Project Title & Link -->
+  <text x="0" y="88" font-size="44" font-weight="800" letter-spacing="-1.5" fill="#F0F6FC">smelt <tspan font-size="18" font-weight="500" fill="#8B949E">— active project</tspan></text>
+  
+  <!-- Description -->
+  <text x="0" y="122" font-size="17" fill="#8B949E">Convert any document to any other.</text>
 </g>
-<!-- Left content -->
-<circle cx="62" cy="46" r="4.5" fill="#C6F432"/>
-<text x="78" y="52" font-size="18" font-weight="600" fill="#8DA396">In the workshop <tspan font-weight="400" fill="#8DA396"> · Rust · pushed today</tspan></text>
-<text x="56" y="112" font-size="58" font-weight="800" letter-spacing="-2" fill="#E8EFDC">smelt</text>
-<text x="58" y="150" font-size="20" fill="#8DA396">Convert any document to any other.</text>
-<!-- Action disc on right -->
-<g transform="translate(1110 90)">
-  <circle cx="0" cy="0" r="32" fill="#C6F432"/>
-  <path d="M-8 8 L8 -8 M-4 -8 H8 V4" stroke="#0D1712" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- Right arrow glyph in clean technical box -->
+<g transform="translate(1100 70)">
+  <rect width="52" height="52" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+  <path d="M20 32 L32 20 M23 20 H32 V29" stroke="#F0F6FC" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
