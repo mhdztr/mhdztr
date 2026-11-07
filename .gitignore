@@ -1,1 +1,3 @@
 .agent/
+# API cache: local only, so the bot never has to commit it
+data/

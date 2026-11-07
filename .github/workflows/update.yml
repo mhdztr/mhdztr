@@ -8,6 +8,9 @@ on:
     paths: ["scripts/**", "config.json", "README.tpl.md"]
 permissions:
   contents: write
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,5 +26,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || (git commit -m "chore: refresh profile" && git push)
+          git add README.md assets
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "chore: refresh profile"
+          # you may have pushed while this job ran: replay on top of it, retry a few times
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 3
+          done
+          exit 1
