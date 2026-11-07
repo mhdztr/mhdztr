@@ -98,8 +98,7 @@ const nowCard = (t, latest, blurb, pushTime) => {
 <rect width="1200" height="150" rx="10" fill="${t.panel}" stroke="${t.border}" stroke-width="1"/>
 ${batikCAD(1200, 150, t)}
 
-<!-- Left Accent border -->
-<rect x="0" y="0" width="4" height="150" rx="2" fill="${t.accent}"/>
+
 
 <g transform="translate(48 0)">
   <!-- Header row -->

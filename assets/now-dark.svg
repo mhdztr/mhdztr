@@ -20,8 +20,7 @@
 </defs>
 <rect width="1200" height="150" fill="url(#bc_3_p)" mask="url(#bc_3_mask)"/>
 
-<!-- Left Accent border -->
-<rect x="0" y="0" width="4" height="150" rx="2" fill="#F59E0B"/>
+
 
 <g transform="translate(48 0)">
   <!-- Header row -->
