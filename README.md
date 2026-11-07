@@ -9,6 +9,12 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
+<div align="center">
+
+<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="Working on smelt" width="880"></picture></a>
+
+</div>
+
 ## Recently shipped
 
 <table>
@@ -22,10 +28,14 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 </tr>
 </table>
 
-More on my [profile](https://github.com/mhdztr?tab=repositories): dashboards, APIs, and smaller experiments.
+## How I spend my time
 
 <div align="center">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/band-dark.svg"><img src="assets/band-light.svg" alt="JavaScript · Rust · Java" width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: JavaScript, Rust, Java, Shell" width="880"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="20 active days in the last 12 weeks" width="880"></picture>
 
 </div>
+
+<sub>Active on 20 of the last 84 days. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>

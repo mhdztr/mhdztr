@@ -9,14 +9,24 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
+<div align="center">
+
+{{NOW}}
+
+</div>
+
 ## Recently shipped
 
 {{TILES}}
 
-More on my [profile](https://github.com/mhdztr?tab=repositories): dashboards, APIs, and smaller experiments.
+## How I spend my time
 
 <div align="center">
 
-{{BAND}}
+{{LANGS}}
+
+{{ACTIVITY}}
 
 </div>
+
+<sub>Active on {{DAYS}} of the last 84 days. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
