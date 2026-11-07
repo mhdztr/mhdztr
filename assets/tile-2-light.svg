@@ -19,7 +19,6 @@
 <rect width="580" height="250" fill="url(#b3p)" opacity="0.045" mask="url(#b3m)"/>
 </g>
 <!-- Subtle silver marker for the most recently pushed project -->
-
 <text x="36" y="96" font-size="50" font-weight="700" letter-spacing="-1.5" fill="#111113">Nakhoda</text>
 <text x="36" y="140" font-size="20" font-weight="400" fill="#686870">Crew management on the web.</text>
 <text x="36" y="214" font-size="16" font-weight="500" fill="#8E8E93">JavaScript · pushed 1d ago</text>

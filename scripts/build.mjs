@@ -106,9 +106,8 @@ const tile = (t, { n, name, line, tag, hot }) => {
   ${batik(580, 250, { stroke: ink, opacity: t === themes.light ? 0.045 : 0.055, dir: "topright", scale: 0.9, fade: 0.7 })}
 </g>
 <!-- Subtle silver marker for the most recently pushed project -->
-${hot ? `<circle cx="36" cy="46" r="3.5" fill="${t.silver}"/><text x="48" y="50" font-size="14" font-weight="500" fill="${t.silver}">Active</text>` : ""}
-<text x="36" y="${hot ? 116 : 96}" font-size="${size}" font-weight="700" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
-<text x="36" y="${hot ? 156 : 140}" font-size="20" font-weight="400" fill="${mut}">${esc(line)}</text>
+<text x="36" y="96" font-size="${size}" font-weight="700" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
+<text x="36" y="140" font-size="20" font-weight="400" fill="${mut}">${esc(line)}</text>
 <text x="36" y="214" font-size="16" font-weight="500" fill="${t.silverLight}">${esc(tag)}</text>
 <!-- Minimal circular action disc -->
 <circle cx="522" cy="198" r="24" fill="${t.discBg}" stroke="${t.hairline}" stroke-width="1.5"/>
@@ -175,7 +174,7 @@ const langBar = (t) => {
   let segs = "", labels = "";
   topLangs.forEach(([name, v], i) => {
     const w = Math.max(14, Math.round((v / total) * W));
-    segs += `<rect x="${32 + x}" y="32" width="${w}" height="24" fill="${shades[i]}"${i === 0 ? ' rx="12"' : ""}/>`;
+    segs += `<rect x="${32 + x}" y="32" width="${w}" height="24" fill="${shades[i]}"/>`;
     x += w + 3;
   });
   topLangs.forEach(([name, v], i) => {
@@ -243,8 +242,7 @@ text{font-family:${SANS}}
   </g>
 </g>
 <!-- Left content -->
-<circle cx="56" cy="42" r="3.5" fill="${t.silver}"/>
-<text x="68" y="47" font-size="16" font-weight="600" fill="${t.muted}">In the workshop <tspan font-weight="400" fill="${t.muted}">${esc(lang)} · pushed ${esc(pushTime)}</tspan></text>
+<text x="54" y="47" font-size="16" font-weight="600" fill="${t.muted}">In the workshop <tspan font-weight="400" fill="${t.muted}">${esc(lang)} · pushed ${esc(pushTime)}</tspan></text>
 <text x="52" y="104" font-size="${titleSize}" font-weight="700" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
 ${blurb ? `<text x="54" y="142" font-size="19" font-weight="400" fill="${t.muted}">${esc(clip(blurb, 60))}</text>` : ""}
 <!-- Action disc on right -->
