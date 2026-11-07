@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 260" width="390" height="260" role="img" aria-label="SIKAP: Finance and budget tracking.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="SIKAP: Finance and budget tracking.">
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
-<rect width="390" height="260" rx="24" fill="#E0E6D3"/>
-<clipPath id="tc"><rect width="390" height="260" rx="24"/></clipPath>
+<rect width="580" height="260" rx="24" fill="#E0E6D3"/>
+<clipPath id="tc"><rect width="580" height="260" rx="24"/></clipPath>
 <g clip-path="url(#tc)"><defs>
-<pattern id="b3p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(0.8)">
+<pattern id="b4p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
 <g fill="none" stroke="#0F2A20" stroke-width="1.6" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
 <ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
@@ -12,13 +12,13 @@
 <g fill="#0F2A20"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
 <circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
 </pattern>
-<linearGradient id="b3g" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
-<mask id="b3m"><rect width="390" height="260" fill="url(#b3g)"/></mask>
+<linearGradient id="b4g" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
+<mask id="b4m"><rect width="580" height="260" fill="url(#b4g)"/></mask>
 </defs>
-<rect width="390" height="260" fill="url(#b3p)" opacity="0.16" mask="url(#b3m)"/></g>
-<text x="30" y="112" font-size="46" font-weight="800" letter-spacing="-2" fill="#0F2A20">SIKAP</text>
-<text x="32" y="152" font-size="20" fill="#4C6256">Finance and budget tracking.</text>
-<text x="32" y="214" font-size="17" font-weight="500" fill="#0F2A20">HTML · pushed 1d ago</text>
-<circle cx="332" cy="220" r="26" fill="#0F2A20"/>
-<path d="M324 228 L340 212 M326 212 H340 V226" stroke="#EEF1E8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="580" height="260" fill="url(#b4p)" opacity="0.16" mask="url(#b4m)"/></g>
+<text x="34" y="132" font-size="58" font-weight="800" letter-spacing="-1.5" fill="#0F2A20">SIKAP</text>
+<text x="36" y="170" font-size="21" fill="#4C6256">Finance and budget tracking.</text>
+<text x="36" y="226" font-size="18" font-weight="500" fill="#0F2A20">HTML · pushed 1d ago</text>
+<circle cx="520" cy="206" r="26" fill="#0F2A20"/>
+<path d="M512 214 L528 198 M514 198 H528 V212" stroke="#EEF1E8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -5,23 +5,9 @@
 
 </div>
 
-I write command-line tools, desktop software and web apps.
+I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
-
-## Projects
-
-<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-1-dark.svg"><img src="assets/tile-1-light.svg" alt="smelt: Convert any document to any other." width="880"></picture></a>
-
-<table>
-<tr>
-<td><a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-2-dark.svg"><img src="assets/tile-2-light.svg" alt="Nakhoda: Crew management on the web." width="280"></picture></a></td>
-<td><a href="https://github.com/mhdztr/SIKAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-3-dark.svg"><img src="assets/tile-3-light.svg" alt="SIKAP: Finance and budget tracking." width="280"></picture></a></td>
-<td><a href="https://github.com/mhdztr/sweep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-4-dark.svg"><img src="assets/tile-4-light.svg" alt="sweep: Storage cleaner that asks first." width="280"></picture></a></td>
-</tr>
-</table>
-
-## Languages and activity
 
 <div align="center">
 

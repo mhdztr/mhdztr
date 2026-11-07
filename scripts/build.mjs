@@ -45,31 +45,28 @@ text{font-family:${SANS}}
   <g class="f2"><rect x="215" y="150" width="170" height="170" rx="40" fill="${t.surface}"/><circle cx="300" cy="235" r="34" fill="none" stroke="${t.ink}" stroke-width="10"/></g>
   <g class="f3"><rect x="20" y="215" width="170" height="90" rx="45" fill="${t.ink}"/><circle cx="145" cy="260" r="24" fill="${t.pop}"/></g>
 </g>
-<text x="60" y="150" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Zakki</text>
-<text x="60" y="246" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Thoriq<tspan fill="${t.pop}">.</tspan></text>
-<text x="64" y="312" font-size="28" fill="${t.muted}">Software developer. Rust, Java and JavaScript.</text>
+<text x="64" y="76" font-size="28" font-weight="500" fill="${t.muted}">Hi, I'm</text>
+<text x="60" y="170" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Zakki</text>
+<text x="60" y="266" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Thoriq<tspan fill="${t.pop}">.</tspan></text>
+<text x="64" y="336" font-size="24" fill="${t.muted}">I build software, mostly small, mostly useful.</text>
 </svg>`;
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const clip = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
 
-// Featured tile is full width and larger; compact tiles sit three to a row.
-const tile = (t, { name, line: fullLine, tag, hot }, featured) => {
-  const line = clip(fullLine, featured ? 60 : 32);
-  const W = featured ? 1200 : 390, H = featured ? 250 : 260, pad = featured ? 56 : 32;
+const tile = (t, { n, name, line, tag, hot }) => {
   const bg = hot ? t.pop : t.surface, ink = hot ? t.onPop : t.ink, mut = hot ? t.onPop : t.muted;
-  const size = featured ? 96 : name.length <= 8 ? 46 : name.length <= 11 ? 38 : name.length <= 14 ? 30 : 24;
-  const ay = featured ? 178 : 212, ax = W - pad - 26;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(name)}: ${esc(line)}">
+  const size = name.length <= 8 ? 58 : name.length <= 11 ? 48 : name.length <= 14 ? 38 : 30;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="${esc(name)}: ${esc(line)}">
 <style>text{font-family:${SANS}}</style>
-<rect width="${W}" height="${H}" rx="24" fill="${bg}"/>
-<clipPath id="tc"><rect width="${W}" height="${H}" rx="24"/></clipPath>
-<g clip-path="url(#tc)">${batik(W, H, { stroke: ink, opacity: hot ? 0.22 : 0.16, dir: featured ? "right" : "topright", scale: featured ? 1.1 : 0.8, fade: featured ? 0.8 : 0.7 })}</g>
-<text x="${pad - 2}" y="${featured ? 120 : 112}" font-size="${size}" font-weight="800" letter-spacing="-2" fill="${ink}">${esc(name)}</text>
-<text x="${pad}" y="${featured ? 168 : 152}" font-size="${featured ? 28 : 20}" fill="${mut}">${esc(line)}</text>
-<text x="${pad}" y="${featured ? 214 : 214}" font-size="${featured ? 20 : 17}" font-weight="500" fill="${ink}">${esc(tag)}</text>
-<circle cx="${ax}" cy="${ay + 8}" r="26" fill="${ink}"/>
-<path d="M${ax - 8} ${ay + 16} L${ax + 8} ${ay} M${ax - 6} ${ay} H${ax + 8} V${ay + 14}" stroke="${hot ? t.pop : t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="580" height="260" rx="24" fill="${bg}"/>
+<clipPath id="tc"><rect width="580" height="260" rx="24"/></clipPath>
+<g clip-path="url(#tc)">${batik(580, 260, { stroke: ink, opacity: hot ? 0.22 : 0.16, dir: "topright", scale: 0.9, fade: 0.7 })}</g>
+<text x="34" y="132" font-size="${size}" font-weight="800" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
+<text x="36" y="170" font-size="21" fill="${mut}">${esc(line)}</text>
+<text x="36" y="226" font-size="18" font-weight="500" fill="${ink}">${esc(tag)}</text>
+<circle cx="520" cy="206" r="26" fill="${ink}"/>
+<path d="M512 214 L528 198 M514 198 H528 V212" stroke="${hot ? t.pop : t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 };
 
@@ -102,17 +99,13 @@ const picked = eligible.slice(0, cfg.count);
 
 const ago = (iso) => {
   const d = Math.floor((Date.now() - new Date(iso)) / 864e5);
-  if (d < 1) return "today";
-  if (d < 7) return `${d}d ago`;
-  const dt = new Date(iso);
-  const sameYear = dt.getUTCFullYear() === new Date().getUTCFullYear();
-  return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: sameYear ? undefined : "numeric", timeZone: "UTC" });
+  return d < 1 ? "today" : d < 30 ? `${d}d ago` : d < 365 ? `${Math.floor(d / 30)}mo ago` : `${Math.floor(d / 365)}y ago`;
 };
 const projects = picked.map((r, i) => ({
   n: String(i + 1).padStart(2, "0"),
   name: r.name,
-  line: clip(cfg.blurbs[r.name] || r.description || `A ${r.language || "code"} project.`, 60),
-  tag: [r.language, (/ago|today/.test(ago(r.pushed_at)) ? `pushed ${ago(r.pushed_at)}` : `last push ${ago(r.pushed_at)}`)].filter(Boolean).join(" · "),
+  line: clip(cfg.blurbs[r.name] || r.description || `A ${r.language || "code"} project.`, 38),
+  tag: [r.language, `pushed ${ago(r.pushed_at)}`].filter(Boolean).join(" · "),
   hot: i === 0,
   url: r.html_url,
 }));
@@ -120,11 +113,7 @@ const projects = picked.map((r, i) => ({
 // language share by bytes across originals (top repos by recency, capped to keep API use low)
 const bytes = {};
 for (const r of eligible.slice(0, 15)) {
-  const file = `data/lang-${r.name}.json`;
-  let hit; try { hit = JSON.parse(readFileSync(file, "utf8")); } catch {}
-  let l;
-  if (hit && hit.pushed_at === r.pushed_at) l = hit.data; // unchanged since last fetch: no API call
-  else { l = await cached(r.languages_url, file + ".tmp", hit?.data || {}); writeFileSync(file, JSON.stringify({ pushed_at: r.pushed_at, data: l })); }
+  const l = await cached(r.languages_url, `data/lang-${r.name}.json`, {});
   for (const [k, v] of Object.entries(l)) if (!cfg.ignoreLangs.includes(k)) bytes[k] = (bytes[k] || 0) + v;
 }
 const total = Object.values(bytes).reduce((a, b) => a + b, 0) || 1;
@@ -178,27 +167,38 @@ ${bars}
 </svg>`;
 };
 
-const haveLangs = topLangs.length > 0;
-if (!haveLangs) console.warn("No language data (API limit, no cache): keeping the previous language graphic");
+// "now" card: the latest push
+const latest = picked[0];
+const nowCard = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on ${esc(latest.name)}">
+<style>text{font-family:${SANS}}</style>
+<rect width="1200" height="150" rx="28" fill="#0F2A20"/>
+<clipPath id="nc"><rect width="1200" height="150" rx="28"/></clipPath>
+<g clip-path="url(#nc)">${batik(1200, 150, { stroke: "#C6F432", opacity: 0.2, dir: "right", scale: 0.9, fade: 0.65 })}</g>
+<text x="48" y="62" font-size="24" font-weight="500" fill="#C6F432">Currently working on</text>
+<text x="46" y="114" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">${esc(latest.name)}</text>
+<text x="1152" y="114" text-anchor="end" font-size="24" fill="#EEF1E8">last push ${esc(ago(latest.pushed_at))}</text>
+</svg>`;
 
 // ---- write ----
-for (const f of readdirSync("assets")) if (/^(tile|now)-/.test(f)) unlinkSync("assets/" + f); // stale tiles only
+for (const f of readdirSync("assets")) unlinkSync("assets/" + f);
 const pic = (name, alt, w) =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="assets/${name}-dark.svg"><img src="assets/${name}-light.svg" alt="${esc(alt)}" width="${w}"></picture>`;
 
 for (const [k, t] of Object.entries(themes)) {
   writeFileSync(`assets/hero-${k}.svg`, hero(t));
-  if (haveLangs) writeFileSync(`assets/lang-${k}.svg`, langBar(t));
+  writeFileSync(`assets/lang-${k}.svg`, langBar(t));
   writeFileSync(`assets/activity-${k}.svg`, activity(t));
-  projects.forEach((p, i) => writeFileSync(`assets/tile-${i + 1}-${k}.svg`, tile(t, p, i === 0)));
+  writeFileSync(`assets/now-${k}.svg`, nowCard(t));
+  projects.forEach((p, i) => writeFileSync(`assets/tile-${i + 1}-${k}.svg`, tile(t, p)));
 }
 
-const link = (p, i, w) => `<a href="${p.url}">${pic(`tile-${i + 1}`, `${p.name}: ${p.line}`, w)}</a>`;
-const [first, ...rest] = projects;
-const tiles = `${link(first, 0, 880)}\n\n<table>\n<tr>\n${rest.map((p, i) => `<td>${link(p, i + 1, 280)}</td>`).join("\n")}\n</tr>\n</table>`;
+const cells = projects.map((p, i) => `<td><a href="${p.url}">${pic(`tile-${i + 1}`, `${p.name}: ${p.line}`, 430)}</a></td>`);
+const rows = [];
+for (let i = 0; i < cells.length; i += 2) rows.push(`<tr>\n${cells.slice(i, i + 2).join("\n")}\n</tr>`);
 const out = readFileSync("README.tpl.md", "utf8")
   .replace("{{HERO}}", pic("hero", "Zakki Thoriq, software developer", 880))
-  .replace("{{TILES}}", tiles)
+  .replace("{{TILES}}", `<table>\n${rows.join("\n")}\n</table>`)
+  .replace("{{NOW}}", `<a href="${latest.html_url}">${pic("now", `Working on ${latest.name}`, 880)}</a>`)
   .replace("{{LANGS}}", pic("lang", `Languages: ${topLangs.map(([n]) => n).join(", ")}`, 880))
   .replace("{{ACTIVITY}}", pic("activity", `${activeDays} active days in the last 12 weeks`, 880))
   .replace("{{DAYS}}", String(activeDays));

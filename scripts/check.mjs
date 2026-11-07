@@ -32,7 +32,7 @@ for (const f of files) {
     const [whole, x, size, rest, txt] = m;
     if (/text-anchor="(end|middle)"/.test(whole)) continue;
     const width = txt.length * Number(size) * (/font-weight="[78]00"/.test(rest) ? 0.58 : 0.5);
-    const limit = w - 32;
+    const limit = /tile-/.test(f) ? w - 36 - 90 : w - 40;
     if (Number(x) + width > limit && !/aria/.test(txt)) bad(`${f}: "${txt.slice(0, 30)}" may overflow (${Math.round(Number(x) + width)} > ${limit})`);
   }
 }
