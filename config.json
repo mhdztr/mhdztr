@@ -1,13 +1,71 @@
 {
   "user": "mhdztr",
   "count": 4,
-  "hide": ["mhdztr"],
-  "ignoreLangs": ["HTML", "CSS"],
+  "hide": [
+    "mhdztr"
+  ],
+  "ignoreLangs": [
+    "HTML",
+    "CSS"
+  ],
   "blurbs": {
     "smelt": "Convert any document to any other.",
     "sweep": "Storage cleaning that asks first.",
     "SIKAP": "Finance and budget tracking.",
     "Nakhoda": "Crew management on the web.",
     "sonora-player": "A smart desktop music player."
+  },
+  "repoMeta": {
+    "smelt": {
+      "description": "Convert any document to any other. One fast binary.",
+      "topics": [
+        "rust",
+        "cli",
+        "document-conversion",
+        "pandoc-alternative"
+      ]
+    },
+    "sweep": {
+      "description": "Linux storage cleaner that asks before it deletes.",
+      "topics": [
+        "rust",
+        "cli",
+        "linux",
+        "disk-cleaner"
+      ]
+    },
+    "Nakhoda": {
+      "description": "Crew management web app on Google Apps Script.",
+      "topics": [
+        "javascript",
+        "google-apps-script",
+        "crew-management"
+      ]
+    },
+    "sonora-player": {
+      "description": "Smart Java music player with audio fingerprinting.",
+      "topics": [
+        "java",
+        "music-player",
+        "audio-fingerprinting",
+        "swing"
+      ]
+    },
+    "SIKAP": {
+      "description": "Finance, budget and personnel system.",
+      "topics": [
+        "html",
+        "finance",
+        "budgeting"
+      ]
+    },
+    "nautika": {
+      "description": "Monitoring and reporting dashboard.",
+      "topics": [
+        "html",
+        "dashboard",
+        "reporting"
+      ]
+    }
   }
 }
