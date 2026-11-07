@@ -5,9 +5,9 @@
 
 </div>
 
-I build software in Rust, Java, and JavaScript: command-line utilities, desktop audio engines, and operational web systems.
+I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
 
-**[GitHub](https://github.com/mhdztr)** &nbsp;·&nbsp; **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)**
+**[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
 <div align="center">
 
@@ -15,11 +15,11 @@ I build software in Rust, Java, and JavaScript: command-line utilities, desktop 
 
 </div>
 
-### Repositories
+## Recently shipped
 
 {{TILES}}
 
-### Telemetry
+## How I spend my time
 
 <div align="center">
 
@@ -29,4 +29,4 @@ I build software in Rust, Java, and JavaScript: command-line utilities, desktop 
 
 </div>
 
-<sub>Automated telemetry: rebuilds from GitHub API every 12 hours via GitHub Actions.</sub>
+<sub>Active on {{DAYS}} of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
