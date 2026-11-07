@@ -3,7 +3,7 @@
 1. On GitHub: **New repository** → name **`mhdztr`** (must equal the username) → **Public** → do NOT tick "Add a README" → Create.
 2. In this folder:
 
-   git add README.md PUSH.md assets
+   git add README.md PUSH.md assets scripts
    git commit -m "profile readme"
    git remote add origin git@github.com:mhdztr/mhdztr.git
    git push -u origin main
@@ -17,4 +17,4 @@
 3. Open https://github.com/mhdztr and check both themes (Settings → Appearance → Light, then Dark).
 4. Optional, Settings → Public profile:
    - Name: `Zakki Thoriq`
-   - Bio: `Rust, Java, JavaScript. Small tools and unglamorous government systems.`
+   - Bio: `Software developer. Rust, Java, JavaScript. Small tools that do one job well.`
