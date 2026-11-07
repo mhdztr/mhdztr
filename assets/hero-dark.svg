@@ -1,33 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Zakki Thoriq, software developer">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Zakki Thoriq, software developer">
 <style>
 text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}
-.f1{animation:fl 7s ease-in-out infinite}.f2{animation:fl 9s ease-in-out -3s infinite}.f3{animation:fl 8s ease-in-out -5s infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@media (prefers-reduced-motion:reduce){.f1,.f2,.f3{animation:none}}
+.s1{animation:fl 8s ease-in-out infinite}.s2{animation:fl 10s ease-in-out -4s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
 </style>
-<rect width="1200" height="380" rx="28" fill="#0D1712"/>
-<clipPath id="hc"><rect width="1200" height="380" rx="28"/></clipPath>
-<g clip-path="url(#hc)"><defs>
-<pattern id="b6p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1.15)">
-<g fill="none" stroke="#E8EFDC" stroke-width="1.6" stroke-linecap="round">
+<rect width="1200" height="360" rx="24" fill="#141416" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+<clipPath id="hc"><rect width="1200" height="360" rx="24"/></clipPath>
+<g clip-path="url(#hc)">
+  <defs>
+<pattern id="b6p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1.1)">
+<g fill="none" stroke="#F2F2F5" stroke-width="1.4" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
 <ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
-<circle cx="32" cy="32" r="3.4"/>
+<circle cx="32" cy="32" r="3.2"/>
 </g>
-<g fill="#E8EFDC"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
-<circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
+<g fill="#F2F2F5"><circle cx="0" cy="0" r="2"/><circle cx="64" cy="0" r="2"/><circle cx="0" cy="64" r="2"/><circle cx="64" cy="64" r="2"/>
+<circle cx="32" cy="3" r="1.3"/><circle cx="32" cy="61" r="1.3"/><circle cx="3" cy="32" r="1.3"/><circle cx="61" cy="32" r="1.3"/></g>
 </pattern>
-<linearGradient id="b6g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.8" stop-color="#000"/></linearGradient>
-<mask id="b6m"><rect width="1200" height="380" fill="url(#b6g)"/></mask>
+<linearGradient id="b6g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.75" stop-color="#000"/></linearGradient>
+<mask id="b6m"><rect width="1200" height="360" fill="url(#b6g)"/></mask>
 </defs>
-<rect width="1200" height="380" fill="url(#b6p)" opacity="0.14" mask="url(#b6m)"/></g>
-<g transform="translate(790 0)">
-  <g class="f1"><circle cx="150" cy="130" r="92" fill="#C6F432"/></g>
-  <g class="f2"><rect x="215" y="150" width="170" height="170" rx="40" fill="#16241C"/><circle cx="300" cy="235" r="34" fill="none" stroke="#E8EFDC" stroke-width="10"/></g>
-  <g class="f3"><rect x="20" y="215" width="170" height="90" rx="45" fill="#E8EFDC"/><circle cx="145" cy="260" r="24" fill="#C6F432"/></g>
+<rect width="1200" height="360" fill="url(#b6p)" opacity="0.065" mask="url(#b6m)"/>
+  <!-- Architectural geometric craft on the right: matte silver & graphite plates -->
+  <g transform="translate(820 40)">
+    <!-- Radial drafting compass ring -->
+    <circle cx="160" cy="140" r="130" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <!-- Floating geometric plates with hairline edges -->
+    <g class="s1">
+      <rect x="90" y="40" width="180" height="180" rx="36" fill="#1E1E22" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+      <circle cx="180" cy="130" r="44" fill="none" stroke="#D1D1D6" stroke-width="2"/>
+      <circle cx="180" cy="130" r="8" fill="#D1D1D6"/>
+    </g>
+    <g class="s2">
+      <rect x="20" y="150" width="140" height="80" rx="20" fill="#141416" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+      <line x1="42" y1="190" x2="118" y2="190" stroke="#A1A1A6" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="120" cy="190" r="4" fill="#D1D1D6"/>
+    </g>
+  </g>
 </g>
-<text x="64" y="76" font-size="28" font-weight="500" fill="#8DA396">Hi, I'm</text>
-<text x="60" y="170" font-size="104" font-weight="800" letter-spacing="-4" fill="#E8EFDC">Zakki</text>
-<text x="60" y="266" font-size="104" font-weight="800" letter-spacing="-4" fill="#E8EFDC">Thoriq<tspan fill="#C6F432">.</tspan></text>
-<text x="64" y="336" font-size="24" fill="#8DA396">I build software, mostly small, mostly useful.</text>
+<text x="64" y="80" font-size="22" font-weight="500" fill="#8A8A93">Hi, I'm</text>
+<text x="62" y="172" font-size="96" font-weight="700" letter-spacing="-3.5" fill="#F2F2F5">Zakki</text>
+<text x="62" y="262" font-size="96" font-weight="700" letter-spacing="-3.5" fill="#F2F2F5">Thoriq<tspan fill="#D1D1D6">.</tspan></text>
+<text x="64" y="318" font-size="22" font-weight="400" fill="#8A8A93">I build software, mostly small, mostly useful.</text>
 </svg>

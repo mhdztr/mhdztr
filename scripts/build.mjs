@@ -2,8 +2,34 @@
 import { writeFileSync, readFileSync, readdirSync, unlinkSync, mkdirSync } from "node:fs";
 
 const themes = {
-  light: { bg: "#EEF1E8", surface: "#E0E6D3", ink: "#0F2A20", muted: "#4C6256", accent: "#0F2A20", pop: "#C6F432", onPop: "#0F2A20" },
-  dark:  { bg: "#0D1712", surface: "#16241C", ink: "#E8EFDC", muted: "#8DA396", accent: "#C6F432", pop: "#C6F432", onPop: "#0D1712" },
+  light: {
+    bg: "#F8F8FA",
+    surface: "#FFFFFF",
+    raised: "#EFEFF2",
+    hairline: "rgba(0,0,0,0.08)",
+    ink: "#111113",
+    muted: "#686870",
+    silver: "#2C2C30",
+    silverLight: "#8E8E93",
+    pop: "#111113",
+    onPop: "#FFFFFF",
+    discBg: "#111113",
+    discArrow: "#F2F2F5",
+  },
+  dark: {
+    bg: "#0A0A0C",
+    surface: "#141416",
+    raised: "#1E1E22",
+    hairline: "rgba(255,255,255,0.08)",
+    ink: "#F2F2F5",
+    muted: "#8A8A93",
+    silver: "#D1D1D6",
+    silverLight: "#A1A1A6",
+    pop: "#F2F2F5",
+    onPop: "#0A0A0C",
+    discBg: "#222226",
+    discArrow: "#D1D1D6",
+  },
 };
 const SANS = "'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif";
 
@@ -11,18 +37,18 @@ const SANS = "'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans
 // Batik kawung motif (four overlapping ovals + cecek dots), tiled and faded out with a mask.
 // dir: where the pattern is strongest ("right", "topright"); it dissolves away from there.
 let batikN = 0;
-const batik = (w, h, { stroke, opacity = 0.14, dir = "right", scale = 1, fade = 0.75 }) => {
+const batik = (w, h, { stroke, opacity = 0.06, dir = "right", scale = 1, fade = 0.75 }) => {
   const id = `b${batikN++}`;
-  const g = { right: [1, 0.5, 0, 0.5], topright: [1, 0, 0, 1] }[dir];
+  const g = { right: [1, 0.5, 0, 0.5], topright: [1, 0, 0, 1] }[dir] || [1, 0.5, 0, 0.5];
   return `<defs>
 <pattern id="${id}p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${scale})">
-<g fill="none" stroke="${stroke}" stroke-width="1.6" stroke-linecap="round">
+<g fill="none" stroke="${stroke}" stroke-width="1.4" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
 <ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
-<circle cx="32" cy="32" r="3.4"/>
+<circle cx="32" cy="32" r="3.2"/>
 </g>
-<g fill="${stroke}"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
-<circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
+<g fill="${stroke}"><circle cx="0" cy="0" r="2"/><circle cx="64" cy="0" r="2"/><circle cx="0" cy="64" r="2"/><circle cx="64" cy="64" r="2"/>
+<circle cx="32" cy="3" r="1.3"/><circle cx="32" cy="61" r="1.3"/><circle cx="3" cy="32" r="1.3"/><circle cx="61" cy="32" r="1.3"/></g>
 </pattern>
 <linearGradient id="${id}g" x1="${g[0]}" y1="${g[1]}" x2="${g[2]}" y2="${g[3]}"><stop offset="0" stop-color="#fff"/><stop offset="${fade}" stop-color="#000"/></linearGradient>
 <mask id="${id}m"><rect width="${w}" height="${h}" fill="url(#${id}g)"/></mask>
@@ -30,43 +56,63 @@ const batik = (w, h, { stroke, opacity = 0.14, dir = "right", scale = 1, fade = 
 <rect width="${w}" height="${h}" fill="url(#${id}p)" opacity="${opacity}" mask="url(#${id}m)"/>`;
 };
 
-const hero = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Zakki Thoriq, software developer">
+const hero = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Zakki Thoriq, software developer">
 <style>
 text{font-family:${SANS}}
-.f1{animation:fl 7s ease-in-out infinite}.f2{animation:fl 9s ease-in-out -3s infinite}.f3{animation:fl 8s ease-in-out -5s infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@media (prefers-reduced-motion:reduce){.f1,.f2,.f3{animation:none}}
+.s1{animation:fl 8s ease-in-out infinite}.s2{animation:fl 10s ease-in-out -4s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
 </style>
-<rect width="1200" height="380" rx="28" fill="${t.bg}"/>
-<clipPath id="hc"><rect width="1200" height="380" rx="28"/></clipPath>
-<g clip-path="url(#hc)">${batik(1200, 380, { stroke: t.ink, opacity: t === themes.light ? 0.15 : 0.14, dir: "right", scale: 1.15, fade: 0.8 })}</g>
-<g transform="translate(790 0)">
-  <g class="f1"><circle cx="150" cy="130" r="92" fill="${t.pop}"/></g>
-  <g class="f2"><rect x="215" y="150" width="170" height="170" rx="40" fill="${t.surface}"/><circle cx="300" cy="235" r="34" fill="none" stroke="${t.ink}" stroke-width="10"/></g>
-  <g class="f3"><rect x="20" y="215" width="170" height="90" rx="45" fill="${t.ink}"/><circle cx="145" cy="260" r="24" fill="${t.pop}"/></g>
+<rect width="1200" height="360" rx="24" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/>
+<clipPath id="hc"><rect width="1200" height="360" rx="24"/></clipPath>
+<g clip-path="url(#hc)">
+  ${batik(1200, 360, { stroke: t.ink, opacity: t === themes.light ? 0.05 : 0.065, dir: "right", scale: 1.1, fade: 0.75 })}
+  <!-- Architectural geometric craft on the right: matte silver & graphite plates -->
+  <g transform="translate(820 40)">
+    <!-- Radial drafting compass ring -->
+    <circle cx="160" cy="140" r="130" fill="none" stroke="${t.hairline}" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <!-- Floating geometric plates with hairline edges -->
+    <g class="s1">
+      <rect x="90" y="40" width="180" height="180" rx="36" fill="${t.raised}" stroke="${t.hairline}" stroke-width="1.5"/>
+      <circle cx="180" cy="130" r="44" fill="none" stroke="${t.silver}" stroke-width="2"/>
+      <circle cx="180" cy="130" r="8" fill="${t.silver}"/>
+    </g>
+    <g class="s2">
+      <rect x="20" y="150" width="140" height="80" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/>
+      <line x1="42" y1="190" x2="118" y2="190" stroke="${t.silverLight}" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="120" cy="190" r="4" fill="${t.silver}"/>
+    </g>
+  </g>
 </g>
-<text x="64" y="76" font-size="28" font-weight="500" fill="${t.muted}">Hi, I'm</text>
-<text x="60" y="170" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Zakki</text>
-<text x="60" y="266" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Thoriq<tspan fill="${t.pop}">.</tspan></text>
-<text x="64" y="336" font-size="24" fill="${t.muted}">I build software, mostly small, mostly useful.</text>
+<text x="64" y="80" font-size="22" font-weight="500" fill="${t.muted}">Hi, I'm</text>
+<text x="62" y="172" font-size="96" font-weight="700" letter-spacing="-3.5" fill="${t.ink}">Zakki</text>
+<text x="62" y="262" font-size="96" font-weight="700" letter-spacing="-3.5" fill="${t.ink}">Thoriq<tspan fill="${t.silver}">.</tspan></text>
+<text x="64" y="318" font-size="22" font-weight="400" fill="${t.muted}">I build software, mostly small, mostly useful.</text>
 </svg>`;
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const clip = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
 
 const tile = (t, { n, name, line, tag, hot }) => {
-  const bg = hot ? t.pop : t.surface, ink = hot ? t.onPop : t.ink, mut = hot ? t.onPop : t.muted;
-  const size = name.length <= 8 ? 58 : name.length <= 11 ? 48 : name.length <= 14 ? 38 : 30;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="${esc(name)}: ${esc(line)}">
+  const bg = t.surface;
+  const ink = t.ink;
+  const mut = t.muted;
+  const size = name.length <= 8 ? 50 : name.length <= 11 ? 42 : name.length <= 14 ? 34 : 28;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 250" width="580" height="250" role="img" aria-label="${esc(name)}: ${esc(line)}">
 <style>text{font-family:${SANS}}</style>
-<rect width="580" height="260" rx="24" fill="${bg}"/>
-<clipPath id="tc"><rect width="580" height="260" rx="24"/></clipPath>
-<g clip-path="url(#tc)">${batik(580, 260, { stroke: ink, opacity: hot ? 0.22 : 0.16, dir: "topright", scale: 0.9, fade: 0.7 })}</g>
-<text x="34" y="132" font-size="${size}" font-weight="800" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
-<text x="36" y="170" font-size="21" fill="${mut}">${esc(line)}</text>
-<text x="36" y="226" font-size="18" font-weight="500" fill="${ink}">${esc(tag)}</text>
-<circle cx="520" cy="206" r="26" fill="${ink}"/>
-<path d="M512 214 L528 198 M514 198 H528 V212" stroke="${hot ? t.pop : t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="580" height="250" rx="20" fill="${bg}" stroke="${t.hairline}" stroke-width="1.5"/>
+<clipPath id="tc${n}"><rect width="580" height="250" rx="20"/></clipPath>
+<g clip-path="url(#tc${n})">
+  ${batik(580, 250, { stroke: ink, opacity: t === themes.light ? 0.045 : 0.055, dir: "topright", scale: 0.9, fade: 0.7 })}
+</g>
+<!-- Subtle silver marker for the most recently pushed project -->
+${hot ? `<circle cx="36" cy="46" r="3.5" fill="${t.silver}"/><text x="48" y="50" font-size="14" font-weight="500" fill="${t.silver}">Active</text>` : ""}
+<text x="36" y="${hot ? 116 : 96}" font-size="${size}" font-weight="700" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
+<text x="36" y="${hot ? 156 : 140}" font-size="20" font-weight="400" fill="${mut}">${esc(line)}</text>
+<text x="36" y="214" font-size="16" font-weight="500" fill="${t.silverLight}">${esc(tag)}</text>
+<!-- Minimal circular action disc -->
+<circle cx="522" cy="198" r="24" fill="${t.discBg}"/>
+<path d="M516 204 L528 192 M518 192 H528 V202" stroke="${t.discArrow}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 };
 
@@ -121,24 +167,26 @@ const topLangs = Object.entries(bytes).filter(([, v]) => v / total >= 0.01).sort
 const langs = topLangs.slice(0, 3).map(([l]) => l).join("  ·  ");
 
 const langBar = (t) => {
-  const shades = [t.pop, t.ink, t.muted, t.surface];
+  const shades = t === themes.light
+    ? ["#111113", "#48484A", "#8E8E93", "#C7C7CC"]
+    : ["#F2F2F5", "#D1D1D6", "#8A8A93", "#48484A"];
   let x = 0;
   const W = 1136;
   let segs = "", labels = "";
   topLangs.forEach(([name, v], i) => {
     const w = Math.max(14, Math.round((v / total) * W));
-    segs += `<rect x="${32 + x}" y="34" width="${w}" height="30" fill="${shades[i]}"${i === 0 ? ' rx="15"' : ""}/>`;
-    x += w + 4;
+    segs += `<rect x="${32 + x}" y="32" width="${w}" height="24" fill="${shades[i]}"${i === 0 ? ' rx="12"' : ""}/>`;
+    x += w + 3;
   });
   topLangs.forEach(([name, v], i) => {
     const lx = 32 + i * 280;
-    labels += `<circle cx="${lx + 8}" cy="100" r="8" fill="${shades[i]}" stroke="${t.muted}" stroke-width="1"/><text x="${lx + 26}" y="106" font-size="19" font-weight="700" fill="${t.ink}">${esc(name)} <tspan font-weight="400" fill="${t.muted}">${Math.round((v / total) * 100)}%</tspan></text>`;
+    labels += `<circle cx="${lx + 8}" cy="94" r="6" fill="${shades[i]}"/><text x="${lx + 22}" y="99" font-size="18" font-weight="600" fill="${t.ink}">${esc(name)} <tspan font-weight="400" fill="${t.muted}">${Math.round((v / total) * 100)}%</tspan></text>`;
   });
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-label="Language share: ${esc(topLangs.map(([n, v]) => `${n} ${Math.round((v / total) * 100)}%`).join(", "))}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="img" aria-label="Language distribution: ${esc(topLangs.map(([n, v]) => `${n} ${Math.round((v / total) * 100)}%`).join(", "))}">
 <style>text{font-family:${SANS}}</style>
-<rect width="1200" height="140" rx="28" fill="${t.bg}" stroke="${t.surface}" stroke-width="2"/>
-<clipPath id="c"><rect x="32" y="34" width="1136" height="30" rx="15"/></clipPath>
-<g clip-path="url(#c)">${segs}</g>
+<rect width="1200" height="130" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/>
+<clipPath id="lc"><rect x="32" y="32" width="1136" height="24" rx="12"/></clipPath>
+<g clip-path="url(#lc)">${segs}</g>
 ${labels}
 </svg>`;
 };
@@ -153,17 +201,19 @@ for (let i = DAYS - 1; i >= 0; i--) { const d = new Date(today - i * 864e5); cel
 const activeDays = cellsData.filter((c) => c.n).length;
 const maxN = Math.max(1, ...cellsData.map((c) => c.n));
 const activity = (t) => {
-  const gap = 8, bw = (1136 - gap * (DAYS - 1)) / DAYS, base = 150, maxH = 110;
+  const gap = 8, bw = (1136 - gap * (DAYS - 1)) / DAYS, base = 142, maxH = 96;
   let bars = "";
   cellsData.forEach((c, i) => {
-    const h = c.n === 0 ? 8 : 16 + (maxH - 16) * (c.n / maxN);
-    bars += `<rect x="${(32 + i * (bw + gap)).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="${Math.min(10, bw / 2).toFixed(1)}" fill="${c.n === 0 ? t.surface : t.pop}"/>`;
+    const h = c.n === 0 ? 6 : 14 + (maxH - 14) * (c.n / maxN);
+    const fill = c.n === 0 ? t.raised : t.silver;
+    const op = c.n === 0 ? 0.7 : 0.5 + 0.5 * (c.n / maxN);
+    bars += `<rect x="${(32 + i * (bw + gap)).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="${Math.min(6, bw / 2).toFixed(1)}" fill="${fill}" opacity="${op.toFixed(2)}"/>`;
   });
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-label="Public activity over the last 6 weeks: ${activeDays} active days">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 190" width="1200" height="190" role="img" aria-label="Public activity over the last 6 weeks: ${activeDays} active days">
 <style>text{font-family:${SANS}}</style>
-<rect width="1200" height="210" rx="28" fill="${t.bg}" stroke="${t.surface}" stroke-width="2"/>
+<rect width="1200" height="190" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/>
 ${bars}
-<text x="32" y="188" font-size="16" fill="${t.muted}">6 weeks ago</text><text x="1168" y="188" text-anchor="end" font-size="16" fill="${t.muted}">today</text>
+<text x="32" y="172" font-size="15" font-weight="400" fill="${t.muted}">6 weeks ago</text><text x="1168" y="172" text-anchor="end" font-size="15" font-weight="400" fill="${t.muted}">today</text>
 </svg>`;
 };
 
@@ -171,38 +221,36 @@ ${bars}
 const latest = picked[0];
 const nowCard = (t) => {
   const blurb = cfg.blurbs[latest.name] || latest.description || "";
-  const titleSize = latest.name.length <= 8 ? 58 : latest.name.length <= 12 ? 48 : 38;
+  const titleSize = latest.name.length <= 8 ? 54 : latest.name.length <= 12 ? 46 : 36;
   const lang = latest.language ? ` · ${latest.language}` : "";
   const pushTime = ago(latest.pushed_at);
-  const btnFill = t === themes.light ? t.ink : t.pop;
-  const arrowStroke = t === themes.light ? t.pop : t.onPop;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="In the workshop: ${esc(latest.name)}${blurb ? " — " + esc(blurb) : ""}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" width="1200" height="170" role="img" aria-label="In the workshop: ${esc(latest.name)}${blurb ? " — " + esc(blurb) : ""}">
 <style>
 text{font-family:${SANS}}
-.s1{animation:fl 7s ease-in-out infinite}.s2{animation:fl 8s ease-in-out -3s infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.s1{animation:fl 8s ease-in-out infinite}.s2{animation:fl 9s ease-in-out -4s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
 </style>
-<rect width="1200" height="180" rx="28" fill="${t.surface}"/>
-<clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
+<rect width="1200" height="170" rx="22" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/>
+<clipPath id="nc"><rect width="1200" height="170" rx="22"/></clipPath>
 <g clip-path="url(#nc)">
-  ${batik(1200, 180, { stroke: t.ink, opacity: t === themes.light ? 0.16 : 0.13, dir: "right", scale: 1, fade: 0.72 })}
-  <!-- Geometric accents echoing hero -->
-  <g transform="translate(860 0)">
-    <g class="s1"><circle cx="120" cy="80" r="68" fill="${t.pop}" opacity="0.85"/></g>
-    <g class="s2"><rect x="20" y="52" width="76" height="76" rx="24" fill="${t.ink}"/><circle cx="58" cy="90" r="16" fill="${t.pop}"/></g>
+  ${batik(1200, 170, { stroke: t.ink, opacity: t === themes.light ? 0.05 : 0.065, dir: "right", scale: 1, fade: 0.72 })}
+  <!-- Minimalist drafting / toolmaker accents on right -->
+  <g transform="translate(870 0)">
+    <g class="s1"><circle cx="120" cy="85" r="66" fill="${t.raised}" stroke="${t.hairline}" stroke-width="1.5"/></g>
+    <g class="s2"><rect x="30" y="55" width="70" height="70" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/><circle cx="65" cy="90" r="14" fill="none" stroke="${t.silver}" stroke-width="2"/></g>
   </g>
 </g>
 <!-- Left content -->
-<circle cx="62" cy="46" r="4.5" fill="${t.pop}"/>
-<text x="78" y="52" font-size="18" font-weight="600" fill="${t.muted}">In the workshop <tspan font-weight="400" fill="${t.muted}">${esc(lang)} · pushed ${esc(pushTime)}</tspan></text>
-<text x="56" y="112" font-size="${titleSize}" font-weight="800" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
-${blurb ? `<text x="58" y="150" font-size="20" fill="${t.muted}">${esc(clip(blurb, 58))}</text>` : ""}
+<circle cx="56" cy="42" r="3.5" fill="${t.silver}"/>
+<text x="68" y="47" font-size="16" font-weight="600" fill="${t.muted}">In the workshop <tspan font-weight="400" fill="${t.muted}">${esc(lang)} · pushed ${esc(pushTime)}</tspan></text>
+<text x="52" y="104" font-size="${titleSize}" font-weight="700" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
+${blurb ? `<text x="54" y="142" font-size="19" font-weight="400" fill="${t.muted}">${esc(clip(blurb, 60))}</text>` : ""}
 <!-- Action disc on right -->
-<g transform="translate(1110 90)">
-  <circle cx="0" cy="0" r="32" fill="${btnFill}"/>
-  <path d="M-8 8 L8 -8 M-4 -8 H8 V4" stroke="${arrowStroke}" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(1120 85)">
+  <circle cx="0" cy="0" r="28" fill="${t.discBg}"/>
+  <path d="M-7 7 L7 -7 M-3 -7 H7 V3" stroke="${t.discArrow}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>`;
 };
