@@ -27,8 +27,8 @@ const themes = {
     silverLight: "#A1A1A6",
     pop: "#F2F2F5",
     onPop: "#0A0A0C",
-    discBg: "#222226",
-    discArrow: "#D1D1D6",
+    discBg: "#26262B",
+    discArrow: "#F2F2F5",
   },
 };
 const SANS = "'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif";
@@ -111,7 +111,7 @@ ${hot ? `<circle cx="36" cy="46" r="3.5" fill="${t.silver}"/><text x="48" y="50"
 <text x="36" y="${hot ? 156 : 140}" font-size="20" font-weight="400" fill="${mut}">${esc(line)}</text>
 <text x="36" y="214" font-size="16" font-weight="500" fill="${t.silverLight}">${esc(tag)}</text>
 <!-- Minimal circular action disc -->
-<circle cx="522" cy="198" r="24" fill="${t.discBg}"/>
+<circle cx="522" cy="198" r="24" fill="${t.discBg}" stroke="${t.hairline}" stroke-width="1.5"/>
 <path d="M516 204 L528 192 M518 192 H528 V202" stroke="${t.discArrow}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 };
@@ -239,7 +239,7 @@ text{font-family:${SANS}}
   <!-- Minimalist drafting / toolmaker accents on right -->
   <g transform="translate(870 0)">
     <g class="s1"><circle cx="120" cy="85" r="66" fill="${t.raised}" stroke="${t.hairline}" stroke-width="1.5"/></g>
-    <g class="s2"><rect x="30" y="55" width="70" height="70" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/><circle cx="65" cy="90" r="14" fill="none" stroke="${t.silver}" stroke-width="2"/></g>
+    <g class="s2"><rect x="30" y="55" width="70" height="70" rx="20" fill="${t.surface}" stroke="${t.hairline}" stroke-width="1.5"/><circle cx="65" cy="90" r="14" fill="none" stroke="${t.silver}" stroke-width="2"/><circle cx="65" cy="90" r="4" fill="${t.silver}"/></g>
   </g>
 </g>
 <!-- Left content -->
@@ -249,7 +249,7 @@ text{font-family:${SANS}}
 ${blurb ? `<text x="54" y="142" font-size="19" font-weight="400" fill="${t.muted}">${esc(clip(blurb, 60))}</text>` : ""}
 <!-- Action disc on right -->
 <g transform="translate(1120 85)">
-  <circle cx="0" cy="0" r="28" fill="${t.discBg}"/>
+  <circle cx="0" cy="0" r="28" fill="${t.discBg}" stroke="${t.hairline}" stroke-width="1.5"/>
   <path d="M-7 7 L7 -7 M-3 -7 H7 V3" stroke="${t.discArrow}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>`;
