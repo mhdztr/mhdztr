@@ -8,6 +8,28 @@ const themes = {
 const SANS = "'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif";
 
 
+// Batik kawung motif (four overlapping ovals + cecek dots), tiled and faded out with a mask.
+// dir: where the pattern is strongest ("right", "topright"); it dissolves away from there.
+let batikN = 0;
+const batik = (w, h, { stroke, opacity = 0.14, dir = "right", scale = 1, fade = 0.75 }) => {
+  const id = `b${batikN++}`;
+  const g = { right: [1, 0.5, 0, 0.5], topright: [1, 0, 0, 1] }[dir];
+  return `<defs>
+<pattern id="${id}p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${scale})">
+<g fill="none" stroke="${stroke}" stroke-width="1.6" stroke-linecap="round">
+<ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
+<ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
+<circle cx="32" cy="32" r="3.4"/>
+</g>
+<g fill="${stroke}"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
+<circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
+</pattern>
+<linearGradient id="${id}g" x1="${g[0]}" y1="${g[1]}" x2="${g[2]}" y2="${g[3]}"><stop offset="0" stop-color="#fff"/><stop offset="${fade}" stop-color="#000"/></linearGradient>
+<mask id="${id}m"><rect width="${w}" height="${h}" fill="url(#${id}g)"/></mask>
+</defs>
+<rect width="${w}" height="${h}" fill="url(#${id}p)" opacity="${opacity}" mask="url(#${id}m)"/>`;
+};
+
 const hero = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Zakki Thoriq, software developer">
 <style>
 text{font-family:${SANS}}
@@ -16,12 +38,14 @@ text{font-family:${SANS}}
 @media (prefers-reduced-motion:reduce){.f1,.f2,.f3{animation:none}}
 </style>
 <rect width="1200" height="380" rx="28" fill="${t.bg}"/>
+<clipPath id="hc"><rect width="1200" height="380" rx="28"/></clipPath>
+<g clip-path="url(#hc)">${batik(1200, 380, { stroke: t.ink, opacity: t === themes.light ? 0.15 : 0.14, dir: "right", scale: 1.15, fade: 0.8 })}</g>
 <g transform="translate(790 0)">
   <g class="f1"><circle cx="150" cy="130" r="92" fill="${t.pop}"/></g>
   <g class="f2"><rect x="215" y="150" width="170" height="170" rx="40" fill="${t.surface}"/><circle cx="300" cy="235" r="34" fill="none" stroke="${t.ink}" stroke-width="10"/></g>
   <g class="f3"><rect x="20" y="215" width="170" height="90" rx="45" fill="${t.ink}"/><circle cx="145" cy="260" r="24" fill="${t.pop}"/></g>
 </g>
-<text x="64" y="74" font-size="22" font-weight="600" fill="${t.muted}" letter-spacing="1">HELLO, I'M</text>
+<text x="64" y="76" font-size="28" font-weight="500" fill="${t.muted}">Hi, I'm</text>
 <text x="60" y="170" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Zakki</text>
 <text x="60" y="266" font-size="104" font-weight="800" letter-spacing="-4" fill="${t.ink}">Thoriq<tspan fill="${t.pop}">.</tspan></text>
 <text x="64" y="336" font-size="24" fill="${t.muted}">I build software, mostly small, mostly useful.</text>
@@ -36,13 +60,13 @@ const tile = (t, { n, name, line, tag, hot }) => {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="${esc(name)}: ${esc(line)}">
 <style>text{font-family:${SANS}}</style>
 <rect width="580" height="260" rx="24" fill="${bg}"/>
-<text x="36" y="58" font-size="18" font-weight="700" fill="${mut}" opacity=".75">${n}</text>
+<clipPath id="tc"><rect width="580" height="260" rx="24"/></clipPath>
+<g clip-path="url(#tc)">${batik(580, 260, { stroke: ink, opacity: hot ? 0.22 : 0.16, dir: "topright", scale: 0.9, fade: 0.7 })}</g>
 <text x="34" y="132" font-size="${size}" font-weight="800" letter-spacing="-1.5" fill="${ink}">${esc(name)}</text>
 <text x="36" y="170" font-size="21" fill="${mut}">${esc(line)}</text>
-<rect x="36" y="198" width="${tag.length * 11 + 32}" height="34" rx="17" fill="none" stroke="${ink}" stroke-width="1.8" opacity=".8"/>
-<text x="52" y="221" font-size="14" font-weight="700" letter-spacing="1.2" fill="${ink}">${esc(tag)}</text>
-<circle cx="520" cy="56" r="26" fill="${ink}"/>
-<path d="M512 64 L528 48 M514 48 H528 V62" stroke="${hot ? t.pop : t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="36" y="226" font-size="18" font-weight="500" fill="${ink}">${esc(tag)}</text>
+<circle cx="520" cy="206" r="26" fill="${ink}"/>
+<path d="M512 214 L528 198 M514 198 H528 V212" stroke="${hot ? t.pop : t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 };
 
@@ -75,13 +99,13 @@ const picked = eligible.slice(0, cfg.count);
 
 const ago = (iso) => {
   const d = Math.floor((Date.now() - new Date(iso)) / 864e5);
-  return d < 1 ? "TODAY" : d < 30 ? `${d}D AGO` : d < 365 ? `${Math.floor(d / 30)}MO AGO` : `${Math.floor(d / 365)}Y AGO`;
+  return d < 1 ? "today" : d < 30 ? `${d}d ago` : d < 365 ? `${Math.floor(d / 30)}mo ago` : `${Math.floor(d / 365)}y ago`;
 };
 const projects = picked.map((r, i) => ({
   n: String(i + 1).padStart(2, "0"),
   name: r.name,
   line: clip(cfg.blurbs[r.name] || r.description || `A ${r.language || "code"} project.`, 38),
-  tag: [r.language, ago(r.pushed_at)].filter(Boolean).join(" · ").toUpperCase(),
+  tag: [r.language, `pushed ${ago(r.pushed_at)}`].filter(Boolean).join(" · "),
   hot: i === 0,
   url: r.html_url,
 }));
@@ -146,12 +170,13 @@ ${bars}
 // "now" card: the latest push
 const latest = picked[0];
 const nowCard = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on ${esc(latest.name)}">
-<style>text{font-family:${SANS}}.p{animation:p 2.4s ease-out infinite;transform-origin:64px 75px}@keyframes p{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>
+<style>text{font-family:${SANS}}</style>
 <rect width="1200" height="150" rx="28" fill="#0F2A20"/>
-<circle class="p" cx="64" cy="75" r="10" fill="#C6F432"/><circle cx="64" cy="75" r="10" fill="#C6F432"/>
-<text x="104" y="62" font-size="18" font-weight="700" letter-spacing="1.5" fill="#C6F432">WORKING ON</text>
-<text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">${esc(latest.name)}</text>
-<text x="1136" y="112" text-anchor="end" font-size="22" fill="#EEF1E8" opacity=".7">last push ${esc(ago(latest.pushed_at).toLowerCase())}</text>
+<clipPath id="nc"><rect width="1200" height="150" rx="28"/></clipPath>
+<g clip-path="url(#nc)">${batik(1200, 150, { stroke: "#C6F432", opacity: 0.2, dir: "right", scale: 0.9, fade: 0.65 })}</g>
+<text x="48" y="62" font-size="24" font-weight="500" fill="#C6F432">Currently working on</text>
+<text x="46" y="114" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">${esc(latest.name)}</text>
+<text x="1152" y="114" text-anchor="end" font-size="24" fill="#EEF1E8">last push ${esc(ago(latest.pushed_at))}</text>
 </svg>`;
 
 // ---- write ----
