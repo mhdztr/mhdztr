@@ -25,10 +25,10 @@ I write command-line tools, desktop software and web apps.
 
 <div align="center">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: " width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: JavaScript, Rust, Java" width="880"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="0 active days in the last 12 weeks" width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="20 active days in the last 12 weeks" width="880"></picture>
 
 </div>
 
-<sub>Active on 0 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
+<sub>Active on 20 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
