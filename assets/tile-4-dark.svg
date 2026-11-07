@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="Nakhoda: Crew management on the web.">
-<style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}.ar{transition:transform .2s}</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="sweep: Storage cleaning that asks first.">
+<style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
 <rect width="580" height="260" rx="24" fill="#16241C"/>
 <text x="36" y="58" font-size="18" font-weight="700" fill="#8DA396" opacity=".75">04</text>
-<text x="34" y="132" font-size="58" font-weight="800" letter-spacing="-2" fill="#E8EFDC">Nakhoda</text>
-<text x="36" y="170" font-size="21" fill="#8DA396">Crew management on the web.</text>
-<rect x="36" y="198" width="208" height="34" rx="17" fill="none" stroke="#E8EFDC" stroke-width="1.8" opacity=".8"/>
-<text x="52" y="221" font-size="14" font-weight="700" letter-spacing="1.2" fill="#E8EFDC">JAVASCRIPT · WEB</text>
+<text x="34" y="132" font-size="58" font-weight="800" letter-spacing="-1.5" fill="#E8EFDC">sweep</text>
+<text x="36" y="170" font-size="21" fill="#8DA396">Storage cleaning that asks first.</text>
+<rect x="36" y="198" width="175" height="34" rx="17" fill="none" stroke="#E8EFDC" stroke-width="1.8" opacity=".8"/>
+<text x="52" y="221" font-size="14" font-weight="700" letter-spacing="1.2" fill="#E8EFDC">RUST · 2D AGO</text>
 <circle cx="520" cy="56" r="26" fill="#E8EFDC"/>
 <path d="M512 64 L528 48 M514 48 H528 V62" stroke="#0D1712" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

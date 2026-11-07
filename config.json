@@ -1,0 +1,13 @@
+{
+  "user": "mhdztr",
+  "count": 4,
+  "hide": ["mhdztr"],
+  "ignoreLangs": ["HTML", "CSS"],
+  "blurbs": {
+    "smelt": "Convert any document to any other.",
+    "sweep": "Storage cleaning that asks first.",
+    "SIKAP": "Finance and budget tracking.",
+    "Nakhoda": "Crew management on the web.",
+    "sonora-player": "A smart desktop music player."
+  }
+}
