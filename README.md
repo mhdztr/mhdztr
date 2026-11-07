@@ -5,7 +5,7 @@
   </picture>
 </div>
 
-> Software in Rust, Java, and JavaScript. Some of it replaces a paid tool. Some of it keeps a fisheries directorate running. Some of it just plays music.
+> Software in Rust, Java, and JavaScript. Some of it replaces a heavyweight tool. Some of it keeps a fisheries directorate running. Some of it just plays music.
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[zakkithoriq@gmail.com](mailto:zakkithoriq@gmail.com)**
 
@@ -25,7 +25,7 @@ The single source of truth for crew management at Dit. POA — the Directorate o
 
 ### 03 · [sweep](https://github.com/mhdztr/sweep)
 
-A storage cleaner for Arch that makes you type `PURGE` — per category, on purpose — before it deletes anything. Pre-alpha and honest about it: `scan` is read-only, eleven safe rules are live, the destructive tier is still milestone work.
+A storage cleaner for Arch that makes you type `PURGE` — per category, on purpose — before it touches the destructive tier. Pre-alpha and honest about it: `scan` is read-only, eleven safe rules are live, the destructive tier is still milestone work.
 
 <sub>RUST · PRE-ALPHA · LINUX</sub>
 
@@ -40,9 +40,9 @@ A desktop music player in Java 17: gapless playback, queue management, fingerpri
 - **[nautika](https://github.com/mhdztr/nautika)** — monitoring and reporting dashboard for the same directorate.
 - **[SIKAP](https://github.com/mhdztr/SIKAP)** — finance, budget, and personnel system for its administrative sub-division.
 - **[darikita](https://github.com/mhdztr/darikita)** — donation platform.
-- **[upnext-backend](https://github.com/mhdztr/upnext-backend)** — scheduling API, deployed at [upnext-be.vercel.app](https://upnext-be.vercel.app).
+- **[upnext-backend](https://github.com/mhdztr/upnext-backend)** — scheduling API, deployed at [upnext-be.vercel.app/events](https://upnext-be.vercel.app/events).
 
-<sub>SIAGA · SISTIK · Radar-POA · awamaman · Final-Project · and the 2024 course work are live but not interesting yet.</sub>
+<sub>SIAGA · SISTIK · Radar-POA are public but empty; awamaman · Final-Project · and the 2024 course work are older and smaller, not interesting yet.</sub>
 
 ## Stack
 
@@ -56,7 +56,7 @@ Ink `#17150F` on paper `#F3EBDD`, one accent: rust `#A6411E`. The masthead, rule
 
 <div align="center">
 
-<img src="https://img.shields.io/github/stars/mhdztr?style=flat-square&label=stars&color=A6411E&labelColor=17150F" alt="Total stars" height="20">&nbsp;<img src="https://img.shields.io/github/followers/mhdztr?style=flat-square&label=followers&color=A6411E&labelColor=17150F" alt="Followers" height="20">&nbsp;<img src="https://img.shields.io/github/last-commit/mhdztr/smelt?style=flat-square&label=last%20push&color=A6411E&labelColor=17150F" alt="Last push to smelt" height="20">
+<img src="https://img.shields.io/github/stars/mhdztr?style=flat-square&label=stars&color=5A5449&labelColor=E5D9C4" alt="Total stars" height="20">&nbsp;<img src="https://img.shields.io/github/followers/mhdztr?style=flat-square&label=followers&color=5A5449&labelColor=E5D9C4" alt="Followers" height="20">&nbsp;<img src="https://img.shields.io/github/last-commit/mhdztr/smelt?style=flat-square&label=last%20push&color=5A5449&labelColor=E5D9C4" alt="Last push to smelt" height="20">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stamp-dark.svg">
