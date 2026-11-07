@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on smelt">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Working on smelt: Convert any document to any other.">
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
-<rect width="1200" height="150" rx="28" fill="#0F2A20"/>
-<clipPath id="nc"><rect width="1200" height="150" rx="28"/></clipPath>
+<rect width="1200" height="180" rx="28" fill="#E0E6D3"/>
+<clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
 <g clip-path="url(#nc)"><defs>
-<pattern id="b1p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
-<g fill="none" stroke="#C6F432" stroke-width="1.6" stroke-linecap="round">
+<pattern id="b1p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+<g fill="none" stroke="#0F2A20" stroke-width="1.6" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
 <ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
 <circle cx="32" cy="32" r="3.4"/>
 </g>
-<g fill="#C6F432"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
+<g fill="#0F2A20"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
 <circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
 </pattern>
-<linearGradient id="b1g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.65" stop-color="#000"/></linearGradient>
-<mask id="b1m"><rect width="1200" height="150" fill="url(#b1g)"/></mask>
+<linearGradient id="b1g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
+<mask id="b1m"><rect width="1200" height="180" fill="url(#b1g)"/></mask>
 </defs>
-<rect width="1200" height="150" fill="url(#b1p)" opacity="0.2" mask="url(#b1m)"/></g>
-<text x="48" y="62" font-size="24" font-weight="500" fill="#C6F432">Currently working on</text>
-<text x="46" y="114" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">smelt</text>
-<text x="1152" y="114" text-anchor="end" font-size="24" fill="#EEF1E8">last push today</text>
+<rect width="1200" height="180" fill="url(#b1p)" opacity="0.16" mask="url(#b1m)"/></g>
+<text x="56" y="56" font-size="22" font-weight="500" fill="#4C6256">Working on</text>
+<text x="54" y="116" font-size="60" font-weight="800" letter-spacing="-2" fill="#0F2A20">smelt</text>
+<text x="56" y="156" font-size="20" fill="#4C6256">Convert any document to any other.</text>
+<circle cx="1118" cy="90" r="30" fill="#0F2A20"/>
+<path d="M1109 99 L1127 81 M1111 81 H1127 V97" stroke="#EEF1E8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

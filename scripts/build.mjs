@@ -169,15 +169,20 @@ ${bars}
 
 // "now" card: the latest push
 const latest = picked[0];
-const nowCard = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on ${esc(latest.name)}">
+const nowCard = (t) => {
+  const blurb = cfg.blurbs[latest.name] || latest.description || "";
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Working on ${esc(latest.name)}${blurb ? ": " + esc(blurb) : ""}">
 <style>text{font-family:${SANS}}</style>
-<rect width="1200" height="150" rx="28" fill="#0F2A20"/>
-<clipPath id="nc"><rect width="1200" height="150" rx="28"/></clipPath>
-<g clip-path="url(#nc)">${batik(1200, 150, { stroke: "#C6F432", opacity: 0.2, dir: "right", scale: 0.9, fade: 0.65 })}</g>
-<text x="48" y="62" font-size="24" font-weight="500" fill="#C6F432">Currently working on</text>
-<text x="46" y="114" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">${esc(latest.name)}</text>
-<text x="1152" y="114" text-anchor="end" font-size="24" fill="#EEF1E8">last push ${esc(ago(latest.pushed_at))}</text>
+<rect width="1200" height="180" rx="28" fill="${t.surface}"/>
+<clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
+<g clip-path="url(#nc)">${batik(1200, 180, { stroke: t.ink, opacity: 0.16, dir: "right", scale: 1, fade: 0.7 })}</g>
+<text x="56" y="56" font-size="22" font-weight="500" fill="${t.muted}">Working on</text>
+<text x="54" y="116" font-size="60" font-weight="800" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
+${blurb ? `<text x="56" y="156" font-size="20" fill="${t.muted}">${esc(clip(blurb, 70))}</text>` : ""}
+<circle cx="1118" cy="90" r="30" fill="${t.ink}"/>
+<path d="M1109 99 L1127 81 M1111 81 H1127 V97" stroke="${t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
+};
 
 // ---- write ----
 for (const f of readdirSync("assets")) unlinkSync("assets/" + f);
