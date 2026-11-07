@@ -5,7 +5,7 @@
 
 </div>
 
-I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
+I like tools that do one thing well such as command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always doing stuff I guess (occasionally).
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
