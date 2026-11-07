@@ -1,8 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Working on smelt: Convert any document to any other.">
-<style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="In the workshop: smelt — Convert any document to any other.">
+<style>
+text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}
+.s1{animation:fl 7s ease-in-out infinite}.s2{animation:fl 8s ease-in-out -3s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
+</style>
 <rect width="1200" height="180" rx="28" fill="#E0E6D3"/>
 <clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
-<g clip-path="url(#nc)"><defs>
+<g clip-path="url(#nc)">
+  <defs>
 <pattern id="b1p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
 <g fill="none" stroke="#0F2A20" stroke-width="1.6" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
@@ -12,13 +18,24 @@
 <g fill="#0F2A20"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
 <circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
 </pattern>
-<linearGradient id="b1g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
+<linearGradient id="b1g" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#fff"/><stop offset="0.72" stop-color="#000"/></linearGradient>
 <mask id="b1m"><rect width="1200" height="180" fill="url(#b1g)"/></mask>
 </defs>
-<rect width="1200" height="180" fill="url(#b1p)" opacity="0.16" mask="url(#b1m)"/></g>
-<text x="56" y="56" font-size="22" font-weight="500" fill="#4C6256">Working on</text>
-<text x="54" y="116" font-size="60" font-weight="800" letter-spacing="-2" fill="#0F2A20">smelt</text>
-<text x="56" y="156" font-size="20" fill="#4C6256">Convert any document to any other.</text>
-<circle cx="1118" cy="90" r="30" fill="#0F2A20"/>
-<path d="M1109 99 L1127 81 M1111 81 H1127 V97" stroke="#EEF1E8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="1200" height="180" fill="url(#b1p)" opacity="0.16" mask="url(#b1m)"/>
+  <!-- Geometric accents echoing hero -->
+  <g transform="translate(860 0)">
+    <g class="s1"><circle cx="120" cy="80" r="68" fill="#C6F432" opacity="0.85"/></g>
+    <g class="s2"><rect x="20" y="52" width="76" height="76" rx="24" fill="#0F2A20"/><circle cx="58" cy="90" r="16" fill="#C6F432"/></g>
+  </g>
+</g>
+<!-- Left content -->
+<circle cx="62" cy="46" r="4.5" fill="#C6F432"/>
+<text x="78" y="52" font-size="18" font-weight="600" fill="#4C6256">In the workshop <tspan font-weight="400" fill="#4C6256"> · Rust · pushed today</tspan></text>
+<text x="56" y="112" font-size="58" font-weight="800" letter-spacing="-2" fill="#0F2A20">smelt</text>
+<text x="58" y="150" font-size="20" fill="#4C6256">Convert any document to any other.</text>
+<!-- Action disc on right -->
+<g transform="translate(1110 90)">
+  <circle cx="0" cy="0" r="32" fill="#0F2A20"/>
+  <path d="M-8 8 L8 -8 M-4 -8 H8 V4" stroke="#C6F432" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>

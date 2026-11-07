@@ -11,7 +11,7 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 <div align="center">
 
-<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="Working on smelt" width="880"></picture></a>
+<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="In the workshop: smelt" width="880"></picture></a>
 
 </div>
 

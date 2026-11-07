@@ -171,16 +171,39 @@ ${bars}
 const latest = picked[0];
 const nowCard = (t) => {
   const blurb = cfg.blurbs[latest.name] || latest.description || "";
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Working on ${esc(latest.name)}${blurb ? ": " + esc(blurb) : ""}">
-<style>text{font-family:${SANS}}</style>
+  const titleSize = latest.name.length <= 8 ? 58 : latest.name.length <= 12 ? 48 : 38;
+  const lang = latest.language ? ` · ${latest.language}` : "";
+  const pushTime = ago(latest.pushed_at);
+  const btnFill = t === themes.light ? t.ink : t.pop;
+  const arrowStroke = t === themes.light ? t.pop : t.onPop;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="In the workshop: ${esc(latest.name)}${blurb ? " — " + esc(blurb) : ""}">
+<style>
+text{font-family:${SANS}}
+.s1{animation:fl 7s ease-in-out infinite}.s2{animation:fl 8s ease-in-out -3s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.s1,.s2{animation:none}}
+</style>
 <rect width="1200" height="180" rx="28" fill="${t.surface}"/>
 <clipPath id="nc"><rect width="1200" height="180" rx="28"/></clipPath>
-<g clip-path="url(#nc)">${batik(1200, 180, { stroke: t.ink, opacity: 0.16, dir: "right", scale: 1, fade: 0.7 })}</g>
-<text x="56" y="56" font-size="22" font-weight="500" fill="${t.muted}">Working on</text>
-<text x="54" y="116" font-size="60" font-weight="800" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
-${blurb ? `<text x="56" y="156" font-size="20" fill="${t.muted}">${esc(clip(blurb, 70))}</text>` : ""}
-<circle cx="1118" cy="90" r="30" fill="${t.ink}"/>
-<path d="M1109 99 L1127 81 M1111 81 H1127 V97" stroke="${t.bg}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#nc)">
+  ${batik(1200, 180, { stroke: t.ink, opacity: t === themes.light ? 0.16 : 0.13, dir: "right", scale: 1, fade: 0.72 })}
+  <!-- Geometric accents echoing hero -->
+  <g transform="translate(860 0)">
+    <g class="s1"><circle cx="120" cy="80" r="68" fill="${t.pop}" opacity="0.85"/></g>
+    <g class="s2"><rect x="20" y="52" width="76" height="76" rx="24" fill="${t.ink}"/><circle cx="58" cy="90" r="16" fill="${t.pop}"/></g>
+  </g>
+</g>
+<!-- Left content -->
+<circle cx="62" cy="46" r="4.5" fill="${t.pop}"/>
+<text x="78" y="52" font-size="18" font-weight="600" fill="${t.muted}">In the workshop <tspan font-weight="400" fill="${t.muted}">${esc(lang)} · pushed ${esc(pushTime)}</tspan></text>
+<text x="56" y="112" font-size="${titleSize}" font-weight="800" letter-spacing="-2" fill="${t.ink}">${esc(latest.name)}</text>
+${blurb ? `<text x="58" y="150" font-size="20" fill="${t.muted}">${esc(clip(blurb, 58))}</text>` : ""}
+<!-- Action disc on right -->
+<g transform="translate(1110 90)">
+  <circle cx="0" cy="0" r="32" fill="${btnFill}"/>
+  <path d="M-8 8 L8 -8 M-4 -8 H8 V4" stroke="${arrowStroke}" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>`;
 };
 
@@ -203,7 +226,7 @@ for (let i = 0; i < cells.length; i += 2) rows.push(`<tr>\n${cells.slice(i, i + 
 const out = readFileSync("README.tpl.md", "utf8")
   .replace("{{HERO}}", pic("hero", "Zakki Thoriq, software developer", 880))
   .replace("{{TILES}}", `<table>\n${rows.join("\n")}\n</table>`)
-  .replace("{{NOW}}", `<a href="${latest.html_url}">${pic("now", `Working on ${latest.name}`, 880)}</a>`)
+  .replace("{{NOW}}", `<a href="${latest.html_url}">${pic("now", `In the workshop: ${latest.name}`, 880)}</a>`)
   .replace("{{LANGS}}", pic("lang", `Languages: ${topLangs.map(([n]) => n).join(", ")}`, 880))
   .replace("{{ACTIVITY}}", pic("activity", `${activeDays} active days in the last 12 weeks`, 880))
   .replace("{{DAYS}}", String(activeDays));
