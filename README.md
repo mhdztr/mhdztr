@@ -5,37 +5,30 @@
 
 </div>
 
-I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
+I write command-line tools, desktop software and web apps.
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
-<div align="center">
+## Projects
 
-<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="Working on smelt" width="880"></picture></a>
-
-</div>
-
-## Recently shipped
+<a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-1-dark.svg"><img src="assets/tile-1-light.svg" alt="smelt: Convert any document to any other." width="880"></picture></a>
 
 <table>
 <tr>
-<td><a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-1-dark.svg"><img src="assets/tile-1-light.svg" alt="smelt: Convert any document to any other." width="430"></picture></a></td>
-<td><a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-2-dark.svg"><img src="assets/tile-2-light.svg" alt="Nakhoda: Crew management on the web." width="430"></picture></a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/mhdztr/SIKAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-3-dark.svg"><img src="assets/tile-3-light.svg" alt="SIKAP: Finance and budget tracking." width="430"></picture></a></td>
-<td><a href="https://github.com/mhdztr/sweep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-4-dark.svg"><img src="assets/tile-4-light.svg" alt="sweep: Storage cleaning that asks first." width="430"></picture></a></td>
+<td><a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-2-dark.svg"><img src="assets/tile-2-light.svg" alt="Nakhoda: Crew management on the web." width="280"></picture></a></td>
+<td><a href="https://github.com/mhdztr/SIKAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-3-dark.svg"><img src="assets/tile-3-light.svg" alt="SIKAP: Finance and budget tracking." width="280"></picture></a></td>
+<td><a href="https://github.com/mhdztr/sweep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-4-dark.svg"><img src="assets/tile-4-light.svg" alt="sweep: Storage cleaner that asks first." width="280"></picture></a></td>
 </tr>
 </table>
 
-## How I spend my time
+## Languages and activity
 
 <div align="center">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: JavaScript, Rust, Java" width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: " width="880"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="20 active days in the last 12 weeks" width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="0 active days in the last 12 weeks" width="880"></picture>
 
 </div>
 
-<sub>Active on 20 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
+<sub>Active on 0 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>

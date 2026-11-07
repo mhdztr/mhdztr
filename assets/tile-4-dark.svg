@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="sweep: Storage cleaning that asks first.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 260" width="390" height="260" role="img" aria-label="sweep: Storage cleaner that asks first.">
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
-<rect width="580" height="260" rx="24" fill="#16241C"/>
-<clipPath id="tc"><rect width="580" height="260" rx="24"/></clipPath>
+<rect width="390" height="260" rx="24" fill="#16241C"/>
+<clipPath id="tc"><rect width="390" height="260" rx="24"/></clipPath>
 <g clip-path="url(#tc)"><defs>
-<pattern id="b11p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
+<pattern id="b9p" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(0.8)">
 <g fill="none" stroke="#E8EFDC" stroke-width="1.6" stroke-linecap="round">
 <ellipse cx="32" cy="15" rx="8.5" ry="15"/><ellipse cx="32" cy="49" rx="8.5" ry="15"/>
 <ellipse cx="15" cy="32" rx="15" ry="8.5"/><ellipse cx="49" cy="32" rx="15" ry="8.5"/>
@@ -12,13 +12,13 @@
 <g fill="#E8EFDC"><circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/><circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
 <circle cx="32" cy="3" r="1.4"/><circle cx="32" cy="61" r="1.4"/><circle cx="3" cy="32" r="1.4"/><circle cx="61" cy="32" r="1.4"/></g>
 </pattern>
-<linearGradient id="b11g" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
-<mask id="b11m"><rect width="580" height="260" fill="url(#b11g)"/></mask>
+<linearGradient id="b9g" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="0.7" stop-color="#000"/></linearGradient>
+<mask id="b9m"><rect width="390" height="260" fill="url(#b9g)"/></mask>
 </defs>
-<rect width="580" height="260" fill="url(#b11p)" opacity="0.16" mask="url(#b11m)"/></g>
-<text x="34" y="132" font-size="58" font-weight="800" letter-spacing="-1.5" fill="#E8EFDC">sweep</text>
-<text x="36" y="170" font-size="21" fill="#8DA396">Storage cleaning that asks first.</text>
-<text x="36" y="226" font-size="18" font-weight="500" fill="#E8EFDC">Rust · pushed 2d ago</text>
-<circle cx="520" cy="206" r="26" fill="#E8EFDC"/>
-<path d="M512 214 L528 198 M514 198 H528 V212" stroke="#0D1712" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect width="390" height="260" fill="url(#b9p)" opacity="0.16" mask="url(#b9m)"/></g>
+<text x="30" y="112" font-size="46" font-weight="800" letter-spacing="-2" fill="#E8EFDC">sweep</text>
+<text x="32" y="152" font-size="20" fill="#8DA396">Storage cleaner that asks first.</text>
+<text x="32" y="214" font-size="17" font-weight="500" fill="#E8EFDC">Rust · pushed 2d ago</text>
+<circle cx="332" cy="220" r="26" fill="#E8EFDC"/>
+<path d="M324 228 L340 212 M326 212 H340 V226" stroke="#0D1712" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

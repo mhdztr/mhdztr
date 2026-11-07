@@ -5,21 +5,15 @@
 
 </div>
 
-I like tools that do one thing well: command-line utilities, desktop apps, and the occasional system that helps a team get its work done. Always learning, usually building.
+I write command-line tools, desktop software and web apps.
 
 **[LinkedIn](https://linkedin.com/in/zakkithoriq)** &nbsp;·&nbsp; **[Email](mailto:zakkithoriq@gmail.com)** &nbsp;·&nbsp; **[GitHub](https://github.com/mhdztr)**
 
-<div align="center">
-
-{{NOW}}
-
-</div>
-
-## Recently shipped
+## Projects
 
 {{TILES}}
 
-## How I spend my time
+## Languages and activity
 
 <div align="center">
 
