@@ -93,7 +93,7 @@ for (const r of eligible.slice(0, 15)) {
   for (const [k, v] of Object.entries(l)) if (!cfg.ignoreLangs.includes(k)) bytes[k] = (bytes[k] || 0) + v;
 }
 const total = Object.values(bytes).reduce((a, b) => a + b, 0) || 1;
-const topLangs = Object.entries(bytes).sort((a, b) => b[1] - a[1]).slice(0, 4);
+const topLangs = Object.entries(bytes).filter(([, v]) => v / total >= 0.01).sort((a, b) => b[1] - a[1]).slice(0, 4);
 const langs = topLangs.slice(0, 3).map(([l]) => l).join("  ·  ");
 
 const langBar = (t) => {
@@ -119,8 +119,8 @@ ${labels}
 </svg>`;
 };
 
-// activity: events per day for the last 12 weeks
-const DAYS = 84;
+// activity: public events per day for the last 6 weeks, as bars
+const DAYS = 42;
 const perDay = new Map();
 for (const e of events) if (e.type !== "WatchEvent") { const d = e.created_at.slice(0, 10); perDay.set(d, (perDay.get(d) || 0) + 1); }
 const today = new Date(); today.setUTCHours(0, 0, 0, 0);
@@ -129,19 +129,17 @@ for (let i = DAYS - 1; i >= 0; i--) { const d = new Date(today - i * 864e5); cel
 const activeDays = cellsData.filter((c) => c.n).length;
 const maxN = Math.max(1, ...cellsData.map((c) => c.n));
 const activity = (t) => {
-  const size = 28, gap = 8, cols = DAYS / 7;
-  const pad = (1200 - (cols * (size + gap) - gap)) / 2;
-  let cells = "";
+  const gap = 8, bw = (1136 - gap * (DAYS - 1)) / DAYS, base = 150, maxH = 110;
+  let bars = "";
   cellsData.forEach((c, i) => {
-    const col = Math.floor(i / 7), row = i % 7;
-    const fill = c.n === 0 ? t.surface : t.pop;
-    const op = c.n === 0 ? 1 : 0.35 + 0.65 * (c.n / maxN);
-    cells += `<rect x="${pad + col * (size + gap)}" y="${24 + row * (size + gap)}" width="${size}" height="${size}" rx="8" fill="${fill}" opacity="${op.toFixed(2)}"/>`;
+    const h = c.n === 0 ? 8 : 16 + (maxH - 16) * (c.n / maxN);
+    bars += `<rect x="${(32 + i * (bw + gap)).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="${Math.min(10, bw / 2).toFixed(1)}" fill="${c.n === 0 ? t.surface : t.pop}"/>`;
   });
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 308" width="1200" height="308" role="img" aria-label="Public activity over the last 12 weeks: ${activeDays} active days">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-label="Public activity over the last 6 weeks: ${activeDays} active days">
 <style>text{font-family:${SANS}}</style>
-<rect width="1200" height="308" rx="28" fill="${t.bg}" stroke="${t.surface}" stroke-width="2"/>
-${cells}
+<rect width="1200" height="210" rx="28" fill="${t.bg}" stroke="${t.surface}" stroke-width="2"/>
+${bars}
+<text x="32" y="188" font-size="16" fill="${t.muted}">6 weeks ago</text><text x="1168" y="188" text-anchor="end" font-size="16" fill="${t.muted}">today</text>
 </svg>`;
 };
 
@@ -149,11 +147,11 @@ ${cells}
 const latest = picked[0];
 const nowCard = (t) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on ${esc(latest.name)}">
 <style>text{font-family:${SANS}}.p{animation:p 2.4s ease-out infinite;transform-origin:64px 75px}@keyframes p{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>
-<rect width="1200" height="150" rx="28" fill="${t.ink}"/>
-<circle class="p" cx="64" cy="75" r="10" fill="${t.pop}"/><circle cx="64" cy="75" r="10" fill="${t.pop}"/>
-<text x="104" y="62" font-size="18" font-weight="700" letter-spacing="1.5" fill="${t.pop}">WORKING ON</text>
-<text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="${t.bg}">${esc(latest.name)}</text>
-<text x="1136" y="112" text-anchor="end" font-size="22" fill="${t.surface}" opacity=".75">last push ${esc(ago(latest.pushed_at).toLowerCase())}</text>
+<rect width="1200" height="150" rx="28" fill="#0F2A20"/>
+<circle class="p" cx="64" cy="75" r="10" fill="#C6F432"/><circle cx="64" cy="75" r="10" fill="#C6F432"/>
+<text x="104" y="62" font-size="18" font-weight="700" letter-spacing="1.5" fill="#C6F432">WORKING ON</text>
+<text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">${esc(latest.name)}</text>
+<text x="1136" y="112" text-anchor="end" font-size="22" fill="#EEF1E8" opacity=".7">last push ${esc(ago(latest.pushed_at).toLowerCase())}</text>
 </svg>`;
 
 // ---- write ----

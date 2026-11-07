@@ -4,5 +4,5 @@
 <circle class="p" cx="64" cy="75" r="10" fill="#C6F432"/><circle cx="64" cy="75" r="10" fill="#C6F432"/>
 <text x="104" y="62" font-size="18" font-weight="700" letter-spacing="1.5" fill="#C6F432">WORKING ON</text>
 <text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">smelt</text>
-<text x="1136" y="112" text-anchor="end" font-size="22" fill="#E0E6D3" opacity=".75">last push today</text>
+<text x="1136" y="112" text-anchor="end" font-size="22" fill="#EEF1E8" opacity=".7">last push today</text>
 </svg>

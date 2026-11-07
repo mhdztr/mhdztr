@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Currently working on smelt">
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}.p{animation:p 2.4s ease-out infinite;transform-origin:64px 75px}@keyframes p{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>
-<rect width="1200" height="150" rx="28" fill="#E8EFDC"/>
+<rect width="1200" height="150" rx="28" fill="#0F2A20"/>
 <circle class="p" cx="64" cy="75" r="10" fill="#C6F432"/><circle cx="64" cy="75" r="10" fill="#C6F432"/>
 <text x="104" y="62" font-size="18" font-weight="700" letter-spacing="1.5" fill="#C6F432">WORKING ON</text>
-<text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="#0D1712">smelt</text>
-<text x="1136" y="112" text-anchor="end" font-size="22" fill="#16241C" opacity=".75">last push today</text>
+<text x="102" y="112" font-size="48" font-weight="800" letter-spacing="-1.5" fill="#EEF1E8">smelt</text>
+<text x="1136" y="112" text-anchor="end" font-size="22" fill="#EEF1E8" opacity=".7">last push today</text>
 </svg>

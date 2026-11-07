@@ -29,4 +29,4 @@ I like tools that do one thing well: command-line utilities, desktop apps, and t
 
 </div>
 
-<sub>Active on {{DAYS}} of the last 84 days. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
+<sub>Active on {{DAYS}} of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
