@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 260" width="580" height="260" role="img" aria-label="smelt: Convert any document to any other.">
+<style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}.ar{transition:transform .2s}</style>
+<rect width="580" height="260" rx="24" fill="#C6F432"/>
+<text x="36" y="58" font-size="18" font-weight="700" fill="#0F2A20" opacity=".75">01</text>
+<text x="34" y="132" font-size="58" font-weight="800" letter-spacing="-2" fill="#0F2A20">smelt</text>
+<text x="36" y="170" font-size="21" fill="#0F2A20">Convert any document to any other.</text>
+<rect x="36" y="198" width="142" height="34" rx="17" fill="none" stroke="#0F2A20" stroke-width="1.8" opacity=".8"/>
+<text x="52" y="221" font-size="14" font-weight="700" letter-spacing="1.2" fill="#0F2A20">RUST · CLI</text>
+<circle cx="520" cy="56" r="26" fill="#0F2A20"/>
+<path d="M512 64 L528 48 M514 48 H528 V62" stroke="#C6F432" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
