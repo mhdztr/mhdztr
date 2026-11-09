@@ -2,6 +2,6 @@
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
 <rect width="1200" height="130" rx="20" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
 <clipPath id="lc"><rect x="32" y="32" width="1136" height="24" rx="12"/></clipPath>
-<g clip-path="url(#lc)"><rect x="32" y="32" width="666" height="24" fill="#111113"/><rect x="701" y="32" width="315" height="24" fill="#48484A"/><rect x="1019" y="32" width="153" height="24" fill="#8E8E93"/></g>
+<g clip-path="url(#lc)"><rect x="32" y="32" width="668" height="24" fill="#111113"/><rect x="703" y="32" width="314" height="24" fill="#48484A"/><rect x="1020" y="32" width="152" height="24" fill="#8E8E93"/></g>
 <circle cx="40" cy="94" r="6" fill="#111113"/><text x="54" y="99" font-size="18" font-weight="600" fill="#111113">JavaScript <tspan font-weight="400" fill="#686870">59%</tspan></text><circle cx="320" cy="94" r="6" fill="#48484A"/><text x="334" y="99" font-size="18" font-weight="600" fill="#111113">Rust <tspan font-weight="400" fill="#686870">28%</tspan></text><circle cx="600" cy="94" r="6" fill="#8E8E93"/><text x="614" y="99" font-size="18" font-weight="600" fill="#111113">Java <tspan font-weight="400" fill="#686870">13%</tspan></text>
 </svg>
