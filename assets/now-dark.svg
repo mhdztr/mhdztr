@@ -29,7 +29,7 @@ text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',s
   </g>
 </g>
 <!-- Left content -->
-<text x="54" y="47" font-size="16" font-weight="600" fill="#8A8A93">In the workshop <tspan font-weight="400" fill="#8A8A93"> · JavaScript · pushed today</tspan></text>
+<text x="54" y="47" font-size="16" font-weight="600" fill="#8A8A93">In the workshop <tspan font-weight="400" fill="#8A8A93"> · HTML · pushed today</tspan></text>
 <text x="52" y="104" font-size="54" font-weight="700" letter-spacing="-2" fill="#F2F2F5">Nakhoda</text>
 <text x="54" y="142" font-size="19" font-weight="400" fill="#8A8A93">Crew management on the web.</text>
 <!-- Action disc on right -->

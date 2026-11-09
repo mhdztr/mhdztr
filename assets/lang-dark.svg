@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="img" aria-label="Language distribution: JavaScript 59%, Rust 28%, Java 13%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="img" aria-label="Language distribution: JavaScript 60%, Rust 27%, Java 13%">
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
 <rect width="1200" height="130" rx="20" fill="#141416" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
 <clipPath id="lc"><rect x="32" y="32" width="1136" height="24" rx="12"/></clipPath>
-<g clip-path="url(#lc)"><rect x="32" y="32" width="668" height="24" fill="#F2F2F5"/><rect x="703" y="32" width="314" height="24" fill="#D1D1D6"/><rect x="1020" y="32" width="152" height="24" fill="#8A8A93"/></g>
-<circle cx="40" cy="94" r="6" fill="#F2F2F5"/><text x="54" y="99" font-size="18" font-weight="600" fill="#F2F2F5">JavaScript <tspan font-weight="400" fill="#8A8A93">59%</tspan></text><circle cx="320" cy="94" r="6" fill="#D1D1D6"/><text x="334" y="99" font-size="18" font-weight="600" fill="#F2F2F5">Rust <tspan font-weight="400" fill="#8A8A93">28%</tspan></text><circle cx="600" cy="94" r="6" fill="#8A8A93"/><text x="614" y="99" font-size="18" font-weight="600" fill="#F2F2F5">Java <tspan font-weight="400" fill="#8A8A93">13%</tspan></text>
+<g clip-path="url(#lc)"><rect x="32" y="32" width="685" height="24" fill="#F2F2F5"/><rect x="720" y="32" width="302" height="24" fill="#D1D1D6"/><rect x="1025" y="32" width="146" height="24" fill="#8A8A93"/></g>
+<circle cx="40" cy="94" r="6" fill="#F2F2F5"/><text x="54" y="99" font-size="18" font-weight="600" fill="#F2F2F5">JavaScript <tspan font-weight="400" fill="#8A8A93">60%</tspan></text><circle cx="320" cy="94" r="6" fill="#D1D1D6"/><text x="334" y="99" font-size="18" font-weight="600" fill="#F2F2F5">Rust <tspan font-weight="400" fill="#8A8A93">27%</tspan></text><circle cx="600" cy="94" r="6" fill="#8A8A93"/><text x="614" y="99" font-size="18" font-weight="600" fill="#F2F2F5">Java <tspan font-weight="400" fill="#8A8A93">13%</tspan></text>
 </svg>
