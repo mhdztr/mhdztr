@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" width="1200" height="170" role="img" aria-label="In the workshop: t1-upnext">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" width="1200" height="170" role="img" aria-label="In the workshop: sweep — Storage cleaning that asks first.">
 <style>
 text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}
 .s1{animation:fl 8s ease-in-out infinite}.s2{animation:fl 9s ease-in-out -4s infinite}
@@ -29,9 +29,9 @@ text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',s
   </g>
 </g>
 <!-- Left content -->
-<text x="54" y="47" font-size="16" font-weight="600" fill="#8A8A93">In the workshop <tspan font-weight="400" fill="#8A8A93"> · JavaScript · pushed today</tspan></text>
-<text x="52" y="104" font-size="46" font-weight="700" letter-spacing="-2" fill="#F2F2F5">t1-upnext</text>
-
+<text x="54" y="47" font-size="16" font-weight="600" fill="#8A8A93">In the workshop <tspan font-weight="400" fill="#8A8A93"> · Rust · pushed today</tspan></text>
+<text x="52" y="104" font-size="54" font-weight="700" letter-spacing="-2" fill="#F2F2F5">sweep</text>
+<text x="54" y="142" font-size="19" font-weight="400" fill="#8A8A93">Storage cleaning that asks first.</text>
 <!-- Action disc on right -->
 <g transform="translate(1120 85)">
   <circle cx="0" cy="0" r="28" fill="#26262B" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
