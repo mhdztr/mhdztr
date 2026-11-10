@@ -11,7 +11,7 @@ I like tools that do one thing well such as command-line utilities, desktop apps
 
 <div align="center">
 
-<a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="In the workshop: Nakhoda" width="880"></picture></a>
+<a href="https://github.com/mhdztr/t1-upnext"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img src="assets/now-light.svg" alt="In the workshop: t1-upnext" width="880"></picture></a>
 
 </div>
 
@@ -19,12 +19,12 @@ I like tools that do one thing well such as command-line utilities, desktop apps
 
 <table>
 <tr>
-<td><a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-1-dark.svg"><img src="assets/tile-1-light.svg" alt="Nakhoda: Crew management on the web." width="430"></picture></a></td>
-<td><a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-2-dark.svg"><img src="assets/tile-2-light.svg" alt="smelt: Convert any document to any other." width="430"></picture></a></td>
+<td><a href="https://github.com/mhdztr/t1-upnext"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-1-dark.svg"><img src="assets/tile-1-light.svg" alt="t1-upnext: A JavaScript project." width="430"></picture></a></td>
+<td><a href="https://github.com/mhdztr/Nakhoda"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-2-dark.svg"><img src="assets/tile-2-light.svg" alt="Nakhoda: Crew management on the web." width="430"></picture></a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/mhdztr/SIKAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-3-dark.svg"><img src="assets/tile-3-light.svg" alt="SIKAP: Finance and budget tracking." width="430"></picture></a></td>
-<td><a href="https://github.com/mhdztr/sweep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-4-dark.svg"><img src="assets/tile-4-light.svg" alt="sweep: Storage cleaning that asks first." width="430"></picture></a></td>
+<td><a href="https://github.com/mhdztr/smelt"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-3-dark.svg"><img src="assets/tile-3-light.svg" alt="smelt: Convert any document to any other." width="430"></picture></a></td>
+<td><a href="https://github.com/mhdztr/SIKAP"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tile-4-dark.svg"><img src="assets/tile-4-light.svg" alt="SIKAP: Finance and budget tracking." width="430"></picture></a></td>
 </tr>
 </table>
 
