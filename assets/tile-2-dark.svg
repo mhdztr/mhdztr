@@ -21,7 +21,7 @@
 <!-- Subtle silver marker for the most recently pushed project -->
 <text x="36" y="96" font-size="42" font-weight="700" letter-spacing="-1.5" fill="#F2F2F5">t1-upnext</text>
 <text x="36" y="140" font-size="20" font-weight="400" fill="#8A8A93">A JavaScript project.</text>
-<text x="36" y="214" font-size="16" font-weight="500" fill="#A1A1A6">JavaScript · pushed 2d ago</text>
+<text x="36" y="214" font-size="16" font-weight="500" fill="#A1A1A6">JavaScript · pushed 3d ago</text>
 <!-- Minimal circular action disc -->
 <circle cx="522" cy="198" r="24" fill="#26262B" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
 <path d="M516 204 L528 192 M518 192 H528 V202" stroke="#F2F2F5" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
