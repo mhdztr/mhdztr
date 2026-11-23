@@ -2,6 +2,6 @@
 <style>text{font-family:'Helvetica Neue','Segoe UI',Helvetica,Arial,'Liberation Sans',sans-serif}</style>
 <rect width="1200" height="130" rx="20" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
 <clipPath id="lc"><rect x="32" y="32" width="1136" height="24" rx="12"/></clipPath>
-<g clip-path="url(#lc)"><rect x="32" y="32" width="717" height="24" fill="#111113"/><rect x="752" y="32" width="264" height="24" fill="#48484A"/><rect x="1019" y="32" width="128" height="24" fill="#8E8E93"/><rect x="1150" y="32" width="23" height="24" fill="#C7C7CC"/></g>
+<g clip-path="url(#lc)"><rect x="32" y="32" width="714" height="24" fill="#111113"/><rect x="749" y="32" width="259" height="24" fill="#48484A"/><rect x="1011" y="32" width="126" height="24" fill="#8E8E93"/><rect x="1140" y="32" width="23" height="24" fill="#C7C7CC"/></g>
 <circle cx="40" cy="94" r="6" fill="#111113"/><text x="54" y="99" font-size="18" font-weight="600" fill="#111113">JavaScript <tspan font-weight="400" fill="#686870">63%</tspan></text><circle cx="320" cy="94" r="6" fill="#48484A"/><text x="334" y="99" font-size="18" font-weight="600" fill="#111113">Rust <tspan font-weight="400" fill="#686870">23%</tspan></text><circle cx="600" cy="94" r="6" fill="#8E8E93"/><text x="614" y="99" font-size="18" font-weight="600" fill="#111113">Java <tspan font-weight="400" fill="#686870">11%</tspan></text><circle cx="880" cy="94" r="6" fill="#C7C7CC"/><text x="894" y="99" font-size="18" font-weight="600" fill="#111113">TypeScript <tspan font-weight="400" fill="#686870">2%</tspan></text>
 </svg>
