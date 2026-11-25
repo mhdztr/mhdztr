@@ -34,8 +34,8 @@ I like tools that do one thing well such as command-line utilities, desktop apps
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/lang-dark.svg"><img src="assets/lang-light.svg" alt="Languages: JavaScript, Rust, Java, TypeScript" width="880"></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="8 active days in the last 12 weeks" width="880"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"><img src="assets/activity-light.svg" alt="7 active days in the last 12 weeks" width="880"></picture>
 
 </div>
 
-<sub>Active on 8 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
+<sub>Active on 7 of the last 6 weeks. Everything above rebuilds itself from the GitHub API every 12 hours.</sub>
